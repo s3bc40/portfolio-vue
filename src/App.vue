@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <TheNavBar
+      :tabs="tabs"
+      :currentTab="currentTab"
+      @changeComponent="onChangeComponent"
+    />
+    <component class="component-container" :is="currentTab"></component>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheNavBar from './components/TheNavBar'
+import About from './components/About'
+import Projects from './components/Projects'
+import Blog from './components/Blog'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheNavBar,
+    About,
+    Projects,
+    Blog
+  },
+  data() {
+    return {
+      tabs: ['About', 'Projects', 'Blog'],
+      currentTab: 'About',
+    }
+  },
+  methods: {
+    onChangeComponent(componentName) {
+      this.currentTab = componentName;
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="postcss">
+  body {
+    @apply
+      bg-gray-100
+  }
+  .component-container {
+    @apply
+      pt-16
+  }
 </style>
