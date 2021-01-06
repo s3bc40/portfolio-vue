@@ -5,7 +5,9 @@
       :currentTab="currentTab"
       @changeComponent="onChangeComponent"
     />
-    <component class="component-container" :is="currentTab"></component>
+    <keep-alive>
+      <component class="component-container" :is="currentTab"></component>
+    </keep-alive>
   </div>
 </template>
 
