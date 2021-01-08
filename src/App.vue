@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <TheNavBar
+    <the-nav-bar
       :tabs="tabs"
       :currentTab="currentTab"
       @changeComponent="onChangeComponent"
-    />
+    ></the-nav-bar>
     <keep-alive>
       <component class="component-container" :is="currentTab"></component>
     </keep-alive>
@@ -42,7 +42,7 @@ export default {
 <style lang="postcss">
   body {
     @apply
-      bg-gray-100
+      bg-honeydew
   }
   .component-container {
     @apply

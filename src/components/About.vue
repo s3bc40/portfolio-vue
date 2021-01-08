@@ -4,48 +4,89 @@
         <div class="profile-experience">
             <span class="experience-title"><i class="fas fa-hat-wizard"></i> Coding Wizard</span>
             <span class="experience-level">Level: {{ currentLevel }}</span>
-            <div class="experience-bar bar-background">
+            <div class="experience-bar">
                 <div class="bar-amount" :style="computeExperienceWidth"></div>
             </div>
             <span class="experience-text">{{ currentExperience }}</span>
         </div>
-        <div class="profile-stats">
-            <!-- Empathy -->
-            <div class="stats-container">
-                <div class="stats-logo">
-                    <i class="fas fa-users-cog"></i>
+        <about-profile-stats></about-profile-stats>
+        <div class="profile-data">
+            <div class="data-skills p-2">
+                <div class="skill">
+                    <i class="fab fa-vuejs"></i>
+                    <span class="skill-text">Vue.js:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                 </div>
-                <div class="stats-name">
-                    <span class="stats-txt">Empathy</span>
+                <div class="skill">
+                    <i class="fab fa-python"></i>
+                    <span class="skill-text">Django:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                 </div>
-                <div class="stats-bar bar-background">
-                    <div class="bar-empathy"></div>
+                <div class="skill">
+                    <i class="fab fa-css3"></i>
+                    <span class="skill-text">Tailwind:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <span class="skill-text">SQL:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-terminal"></i>
+                    <span class="skill-text">Bash:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-linux"></i>
+                    <span class="skill-text">Linux:</span>
+                    <div class="skill-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                 </div>
             </div>
-            <!-- Laziness -->
-            <div class="stats-container">
-                <div class="stats-logo">
-                    <i class="fas fa-bed"></i>
-                </div>
-                <div class="stats-name">
-                    <span class="stats-txt">Laziness</span>
-                </div>
-                <div class="stats-bar bar-background">
-                    <div class="bar-laziness"></div>
-                </div>
+            <div class="data-details">
+                <span class="details-title">Lore</span>
+                <span class="details-content">
+                    Sebastien, the coding wizard, come from the magical realm
+                    the Landes. His powers are fueled by the mystical forest of pines 
+                    and the unlimited cornfields.
+                </span>
             </div>
-            <!-- Patience -->
-            <div class="stats-container">
-                <div class="stats-logo">
-                    <i class="fas fa-chess"></i>
-                </div>
-                <div class="stats-name">
-                    <span class="stats-txt">Patience</span>
-                </div>
-                <div class="stats-bar bar-background">
-                    <div class="bar-patience"></div>
-                </div>
-            </div>            
         </div>
     </div>
 </template>
@@ -53,8 +94,13 @@
 <script>
 import moment from 'moment'
 
+import AboutProfileStats from './AboutProfileStats'
+
 export default {
     name: 'About',
+    components: {
+        AboutProfileStats
+    },
     data() {
         return {
             birthday: moment('1993-08-25'),
@@ -83,7 +129,7 @@ export default {
     },
     mounted() {
         // Compute all experience
-        this.computeExperience()
+       this.computeExperience()
         // Fill the data for the Radar chart
         this.fillData()
     },
@@ -97,7 +143,7 @@ export default {
             next_birthdate.set('years', moment().year())
 
             this.experience_gained = moment().diff(last_birthdate, 'minutes')
-            this.experience_all = next_birthdate.diff(moment(), 'minutes')
+            this.experience_all = next_birthdate.diff(last_birthdate, 'minutes')
         },
         fillData() {
             /* Fill data for the Radar Chart with personal traits */
@@ -117,21 +163,16 @@ export default {
 <style lang="postcss" scoped>
     .component-content {
         @apply
-            container
             px-4
             space-y-4
     }
     .profile-img {
         @apply
-            float-left
+            lg:float-left
             max-w-xs
             mr-4
-            border-2
-            border-pink-400
             rounded-lg
-            ring
-            ring-yellow-400
-            ring-offset-2
+            shadow-lg
     }
     .profile-experience {
         @apply
@@ -143,14 +184,14 @@ export default {
     .experience-title {
         @apply
             text-4xl
-            text-gray-800
+            text-prussian
             capitalize
             italic
     }
     .experience-level {
         @apply
             text-base
-            text-gray-700
+            text-celadonBlue
             font-semibold
     }
     .experience-bar {
@@ -158,77 +199,72 @@ export default {
             w-full
             h-1
             rounded-full
-    }
-    .bar-background {
-        @apply 
-            bg-gray-200
+            bg-powderBlue
     }
     .bar-amount {
         @apply 
             h-full
             rounded-full
-            bg-blue-400   
+            bg-prussian 
     }
     .experience-text {
         @apply
             text-xs
-            text-gray-400
+            text-celadonBlue
             text-justify
     }
-    .profile-stats {
-        @apply 
+    .profile-data {
+        @apply
             grid
-            grid-cols-1
-            grid-flow-row
-            space-y-2
+            grid-cols-2
+            grid-rows-3
+            gap-4
     }
-    .stats-container {
+    .data-skills {
+        @apply
+            grid
+            grid-cols-2
+            gap-4
+            p-6
+            rounded-b-lg
+            bg-celadonBlue
+            text-honeydew
+            border-2
+            border-honeydew
+            ring
+            ring-powderBlue            
+    }
+    .skill {
         @apply
             flex
-            space-x-0
-            text-gray-800
+            flex-wrap
+            place-content-evenly
     }
-    .stats-logo {
+    .skill-text {
         @apply
-            bg-gray-300
-            border
-            rounded-l-full
-            w-1/12
-            p-1
-            text-sm
+            flex-shrink-0
+            w-20
             text-center
+            self-start
     }
-    .stats-name {
+    .skill-star {
         @apply
-            bg-gray-300
-            border
-            w-1/6
-            p-1
             text-sm
-            italic
+            text-honeydew 
+            space-x-0        
     }
-    .stats-bar {
+    .data-details {
         @apply
-            border
-            h-full
-            w-full
+            row-span-3
+            prose-sm
     }
-    .bar-empathy {
-        @apply 
-            h-full
-            w-11/12
-            bg-indigo-600     
-    }
-    .bar-laziness {
-        @apply 
-            h-full
-            w-1/6
-            bg-green-300     
-    }
-    .bar-patience {
-        @apply 
-            h-full
-            w-3/4
-            bg-yellow-300     
+    .details-title {
+        @apply
+            block
+            text-2xl
+            text-center
+            italic
+            font-extrabold
+            text-honeyYellow
     }
 </style>

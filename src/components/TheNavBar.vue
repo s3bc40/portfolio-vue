@@ -41,8 +41,9 @@ export default {
             grid-cols-2
             w-screen
             p-2
-            bg-gray-800
-            text-white
+            bg-prussian
+            text-powderBlue
+            shadow-lg
     }
     .navbar-title {
         @apply
@@ -50,11 +51,10 @@ export default {
             pl-4
             italic
             font-extrabold
-            text-yellow-400
     }
     .title-link {
         @apply
-            hover:text-blue-600
+            hover:text-honeyYellow
     }
     .navbar-components {
         @apply
@@ -67,11 +67,12 @@ export default {
     }
     .tab-component {
         @apply
-            hover:text-blue-500
+            hover:text-honeyYellow
             focus:outline-none
+            font-bold
     }
     .active {
         @apply
-            text-yellow-400
+            text-honeydew
     }
 </style>
