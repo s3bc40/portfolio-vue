@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        oxfordBlue: '#091540',         
         prussian: '#003049',
         celadonBlue: '#457B9D',
         powderBlue: '#A8DADC',
         honeydew: '#F1FAEE',
-        honeyYellow: '#F6AE2D'         
       }, 
     },
   },

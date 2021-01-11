@@ -43,9 +43,12 @@ export default {
   body {
     @apply
       bg-honeydew
+      text-prussian
+      font-sans 
   }
   .component-container {
     @apply
       pt-16
+      mb-12
   }
 </style>

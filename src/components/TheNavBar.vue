@@ -41,9 +41,10 @@ export default {
             grid-cols-2
             w-screen
             p-2
-            bg-prussian
-            text-powderBlue
+            bg-oxfordBlue
+            text-honeydew
             shadow-lg
+            z-10
     }
     .navbar-title {
         @apply
@@ -54,7 +55,7 @@ export default {
     }
     .title-link {
         @apply
-            hover:text-honeyYellow
+            hover:text-celadonBlue
     }
     .navbar-components {
         @apply
@@ -67,12 +68,12 @@ export default {
     }
     .tab-component {
         @apply
-            hover:text-honeyYellow
+            hover:text-celadonBlue
             focus:outline-none
             font-bold
     }
     .active {
         @apply
-            text-honeydew
+            text-powderBlue
     }
 </style>

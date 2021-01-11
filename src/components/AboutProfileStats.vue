@@ -6,10 +6,10 @@
                 <i class="fas fa-users-cog"></i>
             </div>
             <div class="stats-name">
-                <span class="stats-txt">Empathy</span>
+                <span class="stats-txt">Teamwork</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-empathy"></div>
+                <div class="bar-teamwork bar-fill"></div>
             </div>
         </div>
         <!-- Laziness -->
@@ -21,7 +21,7 @@
                 <span class="stats-txt">Laziness</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-laziness"></div>
+                <div class="bar-laziness bar-fill"></div>
             </div>
         </div>
         <!-- Patience -->
@@ -33,7 +33,7 @@
                 <span class="stats-txt">Patience</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-patience"></div>
+                <div class="bar-patience bar-fill"></div>
             </div>
         </div>
         <!-- Dedication -->
@@ -45,7 +45,7 @@
                 <span class="stats-txt">Honesty</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-honesty"></div>
+                <div class="bar-honesty bar-fill"></div>
             </div>
         </div>
         <!-- Energy -->
@@ -57,7 +57,7 @@
                 <span class="stats-txt">Energy</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-energy"></div>
+                <div class="bar-energy bar-fill"></div>
             </div>
         </div>          
     </div>
@@ -77,16 +77,18 @@ export default {
             grid-flow-row
             space-y-2
             text-prussian
+            my-4
     }
     .stats-container {
         @apply
             flex
             space-x-0
+            text-honeydew
     }
     .stats-logo {
         @apply
             flex-shrink-0
-            bg-powderBlue
+            bg-prussian
             border
             rounded-l-full
             w-1/12
@@ -97,9 +99,9 @@ export default {
     .stats-name {
         @apply
             flex-shrink-0
-            bg-powderBlue
+            bg-prussian
             border
-            w-1/6
+            w-32
             p-1
             text-sm
             italic
@@ -109,36 +111,39 @@ export default {
             border
             h-full
             w-full
-            bg-gray-200
+            bg-powderBlue
     }
-    .bar-empathy {
+    .bar-fill {
+        @apply
+            bg-celadonBlue
+    }
+    .bar-teamwork {
         @apply 
             h-full
             w-11/12
-            bg-blue-600  
     }
     .bar-laziness {
         @apply 
             h-full
             w-1/6
-            bg-green-600  
+            /* bg-green-600   */
     }
     .bar-patience {
         @apply 
             h-full
             w-3/4
-            bg-purple-600   
+            /* bg-purple-600    */
     }
     .bar-honesty {
         @apply 
             h-full
             w-4/6
-            bg-red-600    
+            /* bg-red-600     */
     }
     .bar-energy {
         @apply 
             h-full
             w-5/6
-            bg-yellow-300    
+            /* bg-yellow-300     */
     }
 </style>
