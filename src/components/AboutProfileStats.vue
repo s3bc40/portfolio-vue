@@ -1,6 +1,6 @@
 <template>
     <div class="profile-stats">
-        <!-- Empathy -->
+        <!-- Teamwork -->
         <div class="stats-container">
             <div class="stats-logo">
                 <i class="fas fa-users-cog"></i>
@@ -9,7 +9,7 @@
                 <span class="stats-txt">Teamwork</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-teamwork bar-fill"></div>
+                <div class="bar-teamwork bar-fill" :class="{ 'bar-animation': animate_bar }"></div>
             </div>
         </div>
         <!-- Laziness -->
@@ -21,7 +21,7 @@
                 <span class="stats-txt">Laziness</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-laziness bar-fill"></div>
+                <div class="bar-laziness bar-fill" :class="{ 'bar-animation': animate_bar }"></div>
             </div>
         </div>
         <!-- Patience -->
@@ -33,7 +33,7 @@
                 <span class="stats-txt">Patience</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-patience bar-fill"></div>
+                <div class="bar-patience bar-fill" :class="{ 'bar-animation': animate_bar }"></div>
             </div>
         </div>
         <!-- Dedication -->
@@ -45,7 +45,7 @@
                 <span class="stats-txt">Honesty</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-honesty bar-fill"></div>
+                <div class="bar-honesty bar-fill" :class="{ 'bar-animation': animate_bar }"></div>
             </div>
         </div>
         <!-- Energy -->
@@ -57,7 +57,7 @@
                 <span class="stats-txt">Energy</span>
             </div>
             <div class="stats-bar">
-                <div class="bar-energy bar-fill"></div>
+                <div class="bar-energy bar-fill" :class="{ 'bar-animation': animate_bar }"></div>
             </div>
         </div>          
     </div>
@@ -66,6 +66,11 @@
 <script>
 export default {
     name: 'AboutProfileStats',
+    props: {
+        animate_bar: {
+            type: Boolean
+        }
+    }
 }
 </script>
 
@@ -118,6 +123,7 @@ export default {
             bg-celadonBlue
     }
     .bar-teamwork {
+        
         @apply 
             h-full
             w-11/12
@@ -126,24 +132,20 @@ export default {
         @apply 
             h-full
             w-1/6
-            /* bg-green-600   */
     }
     .bar-patience {
         @apply 
             h-full
             w-3/4
-            /* bg-purple-600    */
     }
     .bar-honesty {
         @apply 
             h-full
             w-4/6
-            /* bg-red-600     */
     }
     .bar-energy {
         @apply 
             h-full
             w-5/6
-            /* bg-yellow-300     */
     }
 </style>

@@ -7,67 +7,20 @@
                     <span class="experience-title"><i class="fas fa-hat-wizard"></i> Coding Wizard</span>
                     <span class="experience-level">Level: {{ currentLevel }}</span>
                     <div class="experience-bar">
-                        <div class="bar-amount" :style="computeExperienceWidth"></div>
+                        <div 
+                            class="bar-amount" 
+                            :style="computeExperienceWidth" 
+                            :class="{ 'bar-animation': animate_bar }">
+                        </div>
                     </div>
                     <span class="experience-text">{{ currentExperience }}</span>
                 </div>
-                <about-profile-stats></about-profile-stats>
+                <about-profile-stats :animate_bar=animate_bar></about-profile-stats>
                 <about-profile-data></about-profile-data>
             </div>
         </div>
         <about-gears></about-gears>
-        <div class="content-interest">
-            <h1 class="interest-title">Interests</h1>
-            <div class="interest-cards">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif" alt="Environment">
-                    </div>
-                    <button class="card-title" @click="drop_env = !drop_env">
-                        <h2>Environment</h2>
-                        <i class="far fa-caret-square-down" :class="drop_env ? 'card-dropped' : 'card-not-dropped'"></i>
-                    </button>
-                    <transition name="slide-fade">
-                        <div class="card-content" v-show="drop_env">
-                            <p>
-                                Due to his strong connection with Nature, Sebastien seeks new challenges
-                                in favor of ecology. He enrolled to the guild of "Close to Zero Waste".
-                            </p>
-                        </div>
-                    </transition>
-                </div>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif" alt="Hiking">
-                    </div>
-                    <button class="card-title" @click="drop_hiking = !drop_hiking">
-                        <h2>Hiking</h2>
-                        <i class="far fa-caret-square-down" :class="drop_hiking ? 'card-dropped' : 'card-not-dropped'"></i>
-                    </button>
-                    <transition name="slide-fade">
-                        <div class="card-content" v-show="drop_hiking">
-                            The wizard travelled a lot, and still he loves to discover new landscape.
-                            Hiking allows him to share great memories with his fellow comrades and his dog.
-                        </div>
-                    </transition>
-                </div>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif" alt="Gaming">
-                    </div>
-                    <button class="card-title" @click="drop_gaming = !drop_gaming">
-                        <h2>Gaming</h2>
-                        <i class="far fa-caret-square-down" :class="drop_gaming ? 'card-dropped' : 'card-not-dropped'"></i>
-                    </button>
-                    <transition name="slide-fade">
-                        <div class="card-content" v-show="drop_gaming">
-                            Sebastien discovered the world of video games when he was an apprentice.
-                            He keeps this hobby to meet new people and to share humorous moments.
-                        </div>
-                    </transition>
-                </div>
-            </div>
-        </div>
+        <about-interest></about-interest>
     </div>
 </template>
 
@@ -77,6 +30,7 @@ import moment from 'moment'
 import AboutProfileStats from './AboutProfileStats'
 import AboutProfileData from './AboutProfileData'
 import AboutGears from './AboutGears'
+import AboutInterest from './AboutInterest'
 
 export default {
     name: 'About',
@@ -84,6 +38,7 @@ export default {
         AboutProfileStats,
         AboutProfileData,
         AboutGears,
+        AboutInterest
     },
     data() {
         return {
@@ -91,10 +46,7 @@ export default {
             barClass: 'bar-amount',
             experience_gained: 0,
             experience_all: 0,
-            datacollection: null,
-            drop_env: false,
-            drop_hiking: false,
-            drop_gaming: false,
+            animate_bar: true,
         }
     },
     computed: {
@@ -117,8 +69,8 @@ export default {
     mounted() {
         // Compute all experience
        this.computeExperience()
-        // Fill the data for the Radar chart
-        this.fillData()
+       // Animation bar at start and remove it after
+       setInterval(() => this.animate_bar = false, 4000)
     },
     methods: {
         computeExperience() {
@@ -132,27 +84,11 @@ export default {
             this.experience_gained = moment().diff(last_birthdate, 'minutes')
             this.experience_all = next_birthdate.diff(last_birthdate, 'minutes')
         },
-        fillData() {
-            /* Fill data for the Radar Chart with personal traits */
-            this.datacollection = {
-                labels: ['Adaptability', 'Perseverance', 'Patience', 'Honesty', 'Reliability'],
-                datasets: [
-                    {
-                        data: [90, 80, 75, 75, 85]
-                    }
-                ]
-            }
-        },
-        onClickDrop() {
-            if (this.drop_env) {
-                return
-            }
-        }
     },
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
     .component-content {
         @apply
             space-y-4
@@ -218,96 +154,7 @@ export default {
             text-celadonBlue
             text-justify
     }
-    .content-interest {
-        @apply
-            bg-oxfordBlue
-            text-honeydew
-            py-6
-    }
-    .interest-title {
-        @apply
-            md:text-center
-            inline-block
-            w-full
-            text-4xl
-            italic
-            mb-4
-    }
-    .interest-cards {
-        @apply
-            grid
-            grid-cols-3
-            grid-flow-row
-            gap-1
-    }
-    .card {
-        @apply
-            flex
-            flex-col
-    }
-    .card-img {
-        @apply
-            w-full
-    }
-    .card-img > img {
-        @apply
-            w-full
-            h-80
-            place-self-center
-            object-cover
-            rounded-t-md
-    }
-    .card-title {
-        @apply
-            focus:outline-none
-            grid
-            grid-cols-2
-            bg-celadonBlue
-            text-lg
-            font-bold
-            p-2
-            items-center
-            text-left
-    }
-    .card-title > .far {
-        @apply
-            justify-self-end
-    }
-    .card-dropped {
-        @apply
-            transform
-            transition-transform
-            rotate-180
-    }
-    .card-not-dropped {
-        @apply
-            transform
-            transition-transform
-            rotate-0
-    }
-    .card-content {
-        @apply
-            bg-powderBlue
-            text-prussian
-            prose-sm
-            p-4
-            h-36
-    }
-    .slide-fade-enter-active {
-        @apply
-            transition
-            duration-500
-            ease-out
-    }
-    .slide-fade-leave-active {
-        @apply
-            transition
-            duration-200
-            ease-in
-    }
-    .slide-fade-enter-from, 
-    .slide-fade-leave-to {
-        @apply
-            opacity-0
+    .bar-animation {
+        animation: barWidth 2s;
     }
 </style>
