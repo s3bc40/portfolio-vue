@@ -74,7 +74,7 @@
                 Sebastien, the coding wizard, come from the Landes, the lost magical realm. 
                 His powers are fueled by the mystical forest of pines and the unlimited cornfields. 
                 He acquired a strong understanding of programming when he was fighting 
-                during the war of the Bugging netherrealm.
+                during the war of the "Bugging netherrealm".
             </p>
         </div>
     </div>
@@ -98,7 +98,7 @@ export default {
         @apply
             grid
             grid-cols-2
-            gap-4
+            gap-8
             p-6
             rounded-b-lg
             text-oxfordBlue        
@@ -111,14 +111,18 @@ export default {
     }
     .fas, .fab, .far {
         @apply
+            xl:text-lg
+            sm:text-sm
             text-base
             self-center
     }
     .skill-text {
         @apply
+            sm:text-base
             flex-shrink-0
             w-20
             text-center
+            text-sm
     }
     .skill-star {
         @apply
@@ -129,18 +133,24 @@ export default {
     }
     .skill-star > .fas, .skill-star > .far {
         @apply
+            xl:text-base
+            sm:text-sm
             text-xs
     }
     .details-title {
         @apply
+            sm:text-2xl
             block
-            text-2xl
             text-center
+            text-base
             font-extrabold
             text-prussian
     }
     .details-content {
         @apply
+            xl:leading-loose
+            sm:text-left
+            text-center
             prose-sm
     }
 </style>

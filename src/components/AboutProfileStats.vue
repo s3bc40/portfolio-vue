@@ -92,6 +92,7 @@ export default {
     }
     .stats-logo {
         @apply
+            xl:text-base
             flex-shrink-0
             bg-prussian
             border
@@ -103,6 +104,7 @@ export default {
     }
     .stats-name {
         @apply
+            xl:text-base
             flex-shrink-0
             bg-prussian
             border

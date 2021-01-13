@@ -29,8 +29,10 @@
                 </button>
                 <transition name="fade">
                     <div class="card-content" v-show="drop_hiking">
-                        With his magical map Google and his boots, Sebastien loves to discover new landscape.
-                        Hiking allows him to share great memories with his fellow comrades and his dog.
+                        <p>
+                            Hiking is a great way to do physical activity and to discover new landscape.
+                            It allows him to share great memories with his comrades and his dog.
+                        </p>
                     </div>
                 </transition>
             </div>
@@ -44,8 +46,10 @@
                 </button>
                 <transition name="fade">
                     <div class="card-content" v-show="drop_gaming">
-                        Sebastien discovered the world of video games when he was an apprentice.
-                        He keeps this hobby to meet new people and to share humorous moments.
+                        <p>
+                            Sebastien discovered the world of video games when he was an apprentice.
+                            He keeps this hobby to meet new people and to share humorous moments.
+                        </p>
                     </div>
                 </transition>
             </div>
@@ -58,9 +62,9 @@ export default {
     name: 'AboutInterest',
     data() {
         return {
-            drop_env: false,
-            drop_hiking: false,
-            drop_gaming: false,
+            drop_env: true,
+            drop_hiking: true,
+            drop_gaming: true,
         }
     }
 }
@@ -82,17 +86,22 @@ export default {
     }
     .interest-cards {
         @apply
+            md:grid-cols-3
             grid
-            grid-cols-3
             grid-flow-row
-            gap-4
+            gap-2
             px-6
     }
     .card {
         @apply
+            md:w-full
+            sm:w-96
             flex
             flex-col
+            w-72
+            h-full
             border-powderBlue
+            place-self-center
     }
     .card-img {
         @apply
@@ -103,7 +112,7 @@ export default {
             w-full
             h-80
             place-self-center
-            object-cover
+            object-fill
             rounded-t-md
     }
     .card-title {
@@ -142,7 +151,7 @@ export default {
             text-prussian
             prose-sm
             p-4
-            h-32
+            h-full
             rounded-b-md
             shadow-xl
     }

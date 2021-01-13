@@ -76,7 +76,7 @@
                     <i class="fas fa-dog logo-fa"></i>
                 </div>
                 <div class="item-info">
-                    <h2 class="item-title">Pincess Yuki</h2>
+                    <h2 class="item-title">Yuki</h2>
                     <p class="item-description">
                         Charming beast devoted to his wizard, Sebastien. She seems to be
                         an angel, but she has a strong temper, so be careful. 
@@ -112,8 +112,10 @@ export default {
     }
     .gears-items {
         @apply
+            md:grid-cols-3
+            sm:grid-cols-2
             grid
-            grid-cols-3
+            grid-cols-1
             grid-flow-row
             gap-8
     }
@@ -151,8 +153,8 @@ export default {
     }
     .item-description {
         @apply
-            block
             prose-sm
+            block
     }
     .item-effect {
         @apply

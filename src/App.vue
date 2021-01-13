@@ -17,7 +17,7 @@ import TheNavBar from './components/TheNavBar'
 import TheFooter from './components/TheFooter'
 
 import About from './components/About'
-import Projects from './components/Projects'
+import Work from './components/Work'
 import Contact from './components/Contact'
 
 export default {
@@ -26,12 +26,12 @@ export default {
     TheNavBar,
     TheFooter,
     About,
-    Projects,
+    Work,
     Contact
   },
   data() {
     return {
-      tabs: ['About', 'Projects', 'Contact'],
+      tabs: ['About', 'Work', 'Contact'],
       currentTab: 'About',
     }
   },

@@ -1,10 +1,10 @@
 <template>
-    <div class="component-content">
+    <div class="about-content">
         <div class="content-profile">
             <img class="profile-img" src="../assets/img/profile_pic.png" alt="Seb Claro">
             <div class="profile-content">
                 <div class="profile-experience">
-                    <span class="experience-title"><i class="fas fa-hat-wizard"></i> Coding Wizard</span>
+                    <h1 class="experience-title"><i class="fas fa-hat-wizard"></i> Coding Wizard</h1>
                     <span class="experience-level">Level: {{ currentLevel }}</span>
                     <div class="experience-bar">
                         <div 
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="postcss">
-    .component-content {
+    .about-content {
         @apply
             space-y-4
     }
@@ -103,7 +103,7 @@ export default {
         @apply
             md:flex-shrink-0
             md:w-80
-            md:h-full
+            md:h-auto
             md:rounded-lg
             md:translate-y-0
             transform
