@@ -2,41 +2,46 @@
     <div class="about-content">
         <div class="content-profile">
             <img class="profile-img" src="../assets/img/profile_pic.png" alt="Seb Claro">
-            <div class="profile-content">
-                <div class="profile-experience">
-                    <h1 class="experience-title"><i class="fas fa-hat-wizard"></i> Coding Wizard</h1>
-                    <span class="experience-level">Level: {{ currentLevel }}</span>
-                    <div class="experience-bar">
-                        <div 
-                            class="bar-amount" 
-                            :style="computeExperienceWidth" 
-                            :class="{ 'bar-animation': animate_bar }">
-                        </div>
+            <p class="profile-intro">
+                I'm just an average guy, with an average life, but with <b class="text-green-400">AWESOME</b> coding skills!
+                I also have a dog, so if you are team dog I already love you !
+            </p>
+            <div class="profile-experience">
+                <h1 class="experience-title"><i class="fas fa-code"></i> Web Developer</h1>
+                <span class="experience-level">Level: {{ currentLevel }}</span>
+                <div class="experience-bar">
+                    <div 
+                        class="bar-amount exp-animate">
                     </div>
-                    <span class="experience-text">{{ currentExperience }}</span>
                 </div>
-                <about-profile-stats :animate_bar=animate_bar></about-profile-stats>
-                <about-profile-data></about-profile-data>
+                <span class="experience-text">{{ currentExperience }}</span>
             </div>
+            <about-profile-traits></about-profile-traits>
         </div>
+        <about-profile-skills></about-profile-skills>
         <about-gears></about-gears>
         <about-interest></about-interest>
     </div>
 </template>
 
 <script>
+// Importing GreenSock
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
+
 import moment from 'moment'
 
-import AboutProfileStats from './AboutProfileStats'
-import AboutProfileData from './AboutProfileData'
+import AboutProfileTraits from './AboutProfileTraits'
+import AboutProfileSkills from './AboutProfileSkills'
 import AboutGears from './AboutGears'
 import AboutInterest from './AboutInterest'
 
 export default {
     name: 'About',
     components: {
-        AboutProfileStats,
-        AboutProfileData,
+        AboutProfileSkills,
+        AboutProfileTraits,
         AboutGears,
         AboutInterest
     },
@@ -46,7 +51,6 @@ export default {
             barClass: 'bar-amount',
             experience_gained: 0,
             experience_all: 0,
-            animate_bar: true,
         }
     },
     computed: {
@@ -58,19 +62,17 @@ export default {
             /* Get your amount of experience (your age) in minutes  */
             return `${this.experience_gained} / ${this.experience_all} next level`
         },
-        computeExperienceWidth() {
-            /* Get your experience bar amount (age) */
-            const experience_percent = (100 * this.experience_gained) / this.experience_all
-            return {
-                width: `${experience_percent.toFixed(1)}%`, 
-                }
-        }
     },
     mounted() {
         // Compute all experience
        this.computeExperience()
-       // Animation bar at start and remove it after
-       setInterval(() => this.animate_bar = false, 4000)
+       // Animate experience bar GreenSock
+       gsap.fromTo('.exp-animate',{scaleX: 0, transformOrigin: "left",}, {
+           width: this.computeExperienceWidth(),
+           scaleX: 1,
+           duration: 2,
+           delay: 2
+       })
     },
     methods: {
         computeExperience() {
@@ -84,36 +86,38 @@ export default {
             this.experience_gained = moment().diff(last_birthdate, 'minutes')
             this.experience_all = next_birthdate.diff(last_birthdate, 'minutes')
         },
+        computeExperienceWidth() {
+            /* Get your experience bar amount (age) */
+            const experience_percent = (100 * this.experience_gained) / this.experience_all
+            return `${experience_percent.toFixed(1)}%`
+        }
     },
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
     .about-content {
         @apply
-            space-y-4
+            space-y-24
     }
     .content-profile {
         @apply
-            md:flex
-            md:space-x-4
-            px-4
+            space-y-2
     }
     .profile-img {
         @apply
-            md:flex-shrink-0
-            md:w-80
-            md:h-auto
-            md:rounded-lg
-            md:translate-y-0
-            transform
             w-64
             h-64
             rounded-full
             mx-auto
-            shadow-lg
             object-cover
             object-top
+    }
+    .profile-intro {
+        @apply
+            text-center
+            prose
+            mx-auto
     }
     .profile-experience {
         @apply
@@ -121,40 +125,40 @@ export default {
             flex-wrap
             space-x-6
             space-y-2
-            m-2
+            w-4/5
+            mx-auto
+            place-content-center
     }
     .experience-title {
         @apply
             text-4xl
-            text-prussian
+            text-green-600
             italic
     }
     .experience-level {
         @apply
             text-base
-            text-celadonBlue
+            text-gray-400
             font-semibold
+            self-center
     }
     .experience-bar {
         @apply
             w-full
             h-1
             rounded-full
-            bg-powderBlue
+            bg-green-300
     }
     .bar-amount {
         @apply 
             h-full
             rounded-full
-            bg-prussian
+            bg-green-600
     }
     .experience-text {
         @apply
             text-xs
-            text-celadonBlue
+            text-gray-400
             text-justify
-    }
-    .bar-animation {
-        animation: barWidth 2s;
     }
 </style>

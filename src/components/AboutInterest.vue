@@ -120,8 +120,8 @@ export default {
             focus:outline-none
             grid
             grid-cols-2
-            bg-celadonBlue
-            text-honeydew
+            bg-green-600
+            text-white
             text-lg
             font-bold
             p-2
@@ -147,8 +147,7 @@ export default {
     }
     .card-content {
         @apply
-            bg-powderBlue
-            text-prussian
+            bg-green-200
             prose-sm
             p-4
             h-full

@@ -9,10 +9,9 @@
                 <div class="item-info">
                     <h2 class="item-title">VS Code IDE</h2>
                     <p class="item-description">
-                        Mystical weapon, unknown from every normal being.
-                        It allows to summon powerfull spells, each of them
-                        having their own language. Gain <span class="item-effect">30%
-                        of casting speed</span> and <span class="item-effect">40% of coding power</span> .
+                        Intergrated development environment, allowing to code efficiently.
+                        My preference, until there is better.Gain <span class="item-effect">30% of coding speed</span> 
+                        and <span class="item-effect">40% of coding precision</span>.
                     </p>  
                 </div>
             </div>
@@ -23,9 +22,9 @@
                 <div class="item-info">
                     <h2 class="item-title">Coffee</h2>
                     <p class="item-description">
-                        Divine potion coming from the ancient Goron village.
-                        The recipe is unknown, but it seems to improve the Coding
-                        power of a wizard. Allows to to gain <span class="item-effect">60% of energy</span>.
+                        My fuel to be the best developer you'll ever seen. But moderatly,
+                        because I can become a little bit crazy. Allows to to gain
+                        <span class="item-effect">60% of energy</span>.
                     </p>  
                 </div>
             </div>
@@ -36,9 +35,9 @@
                 <div class="item-info">
                     <h2 class="item-title">Glasses</h2>
                     <p class="item-description">
-                        Protection against extra bright crystal screen. Very effective
-                        during the night. It also improves the eyesight of a wizard, by detecting 
-                        evil bugs. Gain <span class="item-effect">20% of energy</span> and
+                        Protection against extra bright screen. Very effective
+                        during the night. It also improves my eyesight, by detecting 
+                        the worst bugs. Gain <span class="item-effect">20% of energy</span> and
                         <span class="item-effect">30% of patience</span>.
                     </p>  
                 </div>
@@ -50,10 +49,10 @@
                 <div class="item-info">
                     <h2 class="item-title">Stack-overflow</h2>
                     <p class="item-description">
-                        Ancient encyclopedia with resources about coding spells.
-                        It is a space where great wizards share their knowledge, or crush other wizards. 
+                        Encyclopedia with programming resources.
+                        It is a space where we can share knowledge, or we can be crushed. 
                         Gain <span class="item-effect">"Unlimited power" status</span> or
-                        <span class="item-effect">"Helpless wizard" status</span>.
+                        <span class="item-effect">"Helpless developer" status</span>.
                     </p>  
                 </div>
             </div>
@@ -64,10 +63,9 @@
                 <div class="item-info">
                     <h2 class="item-title">Trello</h2>
                     <p class="item-description">
-                        Spell manager storing effective combination, to cast alone or with others.
-                        Some spells are time limited, so it is important to respect the deadlnes. 
-                        Improve by <span class="item-effect">70% teamwork</span> and reduce by
-                        <span class="item-effect">50% laziness</span>.
+                        Required to be organised during the development of an application.
+                        Really important to respect the deadlines, as much as possible with others. 
+                        Improve <span class="item-effect">teamwork by 70%</span>.
                     </p>  
                 </div>
             </div>
@@ -78,7 +76,7 @@
                 <div class="item-info">
                     <h2 class="item-title">Yuki</h2>
                     <p class="item-description">
-                        Charming beast devoted to his wizard, Sebastien. She seems to be
+                        The best dog of the world, I am objective. She seems to be
                         an angel, but she has a strong temper, so be careful. 
                         <span class="item-effect">Refuel energy and patience</span> to the
                         maximum.
@@ -98,17 +96,10 @@ export default {
 <style lang="postcss" scoped>
     .content-gears {
         @apply
-            px-4
-    }
-    .gears-title {
-        @apply
-            md:text-center
-            inline-block
-            w-full
-            text-4xl
-            text-prussian
-            italic
-            my-4
+            w-5/6
+            mx-auto
+            space-y-2
+
     }
     .gears-items {
         @apply
@@ -127,8 +118,8 @@ export default {
     .item-logo {
         @apply
             flex-shrink-0
-            bg-oxfordBlue
-            text-honeydew
+            bg-green-800
+            text-white
             w-14
             h-14
             text-center
@@ -150,6 +141,7 @@ export default {
             block
             text-lg
             font-bold
+            text-green-600
     }
     .item-description {
         @apply
@@ -158,7 +150,7 @@ export default {
     }
     .item-effect {
         @apply
-            text-celadonBlue
+            text-green-500
             font-bold
     }
 </style>

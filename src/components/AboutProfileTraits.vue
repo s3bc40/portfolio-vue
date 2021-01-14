@@ -1,0 +1,131 @@
+<template>
+    <div class="profile-traits">
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-users-cog"></i>
+            </div>
+            <span class="trait-text">Teamwork:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-chess"></i>
+            </div>
+            <span class="trait-text">Patience:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-balance-scale"></i>
+            </div>
+            <span class="trait-text">Honesty:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+            <span class="trait-text">Energy:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-bed"></i>
+            </div>
+            <span class="trait-text">Laziness:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+        <div class="trait">
+            <div class="trait-logo">
+                <i class="fas fa-heart-broken"></i>
+            </div>
+            <span class="trait-text">Selfish:</span>
+            <div class="trait-star">
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'AboutProfileTraits',
+}
+</script>
+
+<style lang="postcss" scoped>
+    .profile-traits {
+        @apply
+            grid
+            grid-cols-2
+            gap-4
+            w-2/5
+            mx-auto
+    }
+    .trait {
+        @apply
+            flex
+            flex-wrap
+            place-content-evenly
+    }
+    .trait-logo {
+        @apply
+            text-xl
+            self-center
+            text-green-600
+    }
+    .trait-text {
+        @apply
+            flex-shrink-0
+            w-20
+            text-center
+            prose
+    }
+    .trait-star {
+        @apply
+            flex
+            text-green-400
+            space-x-0 
+            self-center       
+    }
+    .trait-star > .fas, .trait-star > .far {
+        @apply
+            xl:text-base
+            sm:text-sm
+            text-xs
+    }
+</style>

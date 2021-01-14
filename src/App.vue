@@ -46,16 +46,12 @@ export default {
 <style lang="postcss">
   body {
     @apply
-      bg-honeydew
-      text-prussian
-      font-sans 
+      bg-white
+      text-black
   }
   .component-container {
     @apply
       pt-16
       mb-12
-  }
-  @keyframes barWidth {
-        from {width: 0%;}
   }
 </style>

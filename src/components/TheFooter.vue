@@ -20,18 +20,18 @@ export default {
             justify-center
             w-full
             h-20
-            bg-prussian
+            bg-green-600
 
     }
     .footer-text {
         @apply
             text-sm
-            text-powderBlue
+            text-white
             text-center
             place-self-center 
     }
     .text-year{
         @apply
-            text-honeydew
+            font-bold
     }
 </style>
