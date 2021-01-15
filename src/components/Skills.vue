@@ -135,7 +135,10 @@ export default {
     mounted() {
         // Add ScrollIntoView plugin GSAP
         gsap.from(".skill-animate", {
-            scrollTrigger: ".skill-animate",
+            scrollTrigger: {
+                trigger: ".skill-animate",
+                start: "top center"
+            },
             scaleX: 0,
             transformOrigin: "left",
             duration: 2,
@@ -196,6 +199,6 @@ export default {
     .bar-fill {
         @apply
             h-full
-            bg-green-200
+            bg-green-300
     }
 </style>

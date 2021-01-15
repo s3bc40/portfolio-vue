@@ -88,8 +88,35 @@
 </template>
 
 <script>
+// Importing GreenSock
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
     name: 'AboutGears',
+    mounted() {
+        // Animate translation of grid items
+        const tl = gsap.timeline({ 
+            defaults: {ease: "inout"},
+            scrollTrigger: {
+                trigger: ".item-logo",
+                start: "top center",
+            }
+        })
+        tl.from(".item-logo", {
+            opacity:0, 
+            duration: 0.5
+        })
+        .from(".item-info", {
+            opacity:0,
+            duration: 0.5
+        })
+        .from(".item-info", {
+            y: 500,
+            duration: 1
+        })
+    }
 }
 </script>
 

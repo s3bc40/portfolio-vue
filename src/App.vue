@@ -5,9 +5,14 @@
       :currentTab="currentTab"
       @changeComponent="onChangeComponent"
     ></the-nav-bar>
-    <keep-alive>
-      <component class="component-container" :is="currentTab"></component>
-    </keep-alive>
+    <div class="components-container">
+      <profile></profile>
+      <skills></skills>
+      <gears></gears>
+      <interest></interest>
+      <work></work>
+      <contact></contact>
+    </div>
     <the-footer></the-footer>
   </div>
 </template>
@@ -15,8 +20,10 @@
 <script>
 import TheNavBar from './components/TheNavBar'
 import TheFooter from './components/TheFooter'
-
-import About from './components/About'
+import Profile from './components/Profile'
+import Skills from './components/Skills'
+import Gears from './components/Gears'
+import Interest from './components/Interest'
 import Work from './components/Work'
 import Contact from './components/Contact'
 
@@ -25,19 +32,29 @@ export default {
   components: {
     TheNavBar,
     TheFooter,
-    About,
+    Profile,
+    Skills,
+    Gears,
+    Interest,
     Work,
     Contact
   },
   data() {
     return {
-      tabs: ['About', 'Work', 'Contact'],
-      currentTab: 'About',
+      tabs: [
+        'Profile', 
+        'Skills', 
+        'Gears',
+        'Interest', 
+        'Work', 
+        'Contact'
+      ],
+      currentTab: 'Profile',
     }
   },
   methods: {
-    onChangeComponent(componentName) {
-      this.currentTab = componentName;
+    onChangeComponent(tab) {
+      this.currentTab = tab
     }
   }
 }
@@ -49,9 +66,10 @@ export default {
       bg-white
       text-black
   }
-  .component-container {
+  .components-container {
     @apply
       pt-16
       mb-12
+      space-y-16
   }
 </style>

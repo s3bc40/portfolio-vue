@@ -66,14 +66,14 @@ export default {
             drop_hiking: true,
             drop_gaming: true,
         }
-    }
+    },
 }
 </script>
 
 <style lang="postcss" scoped>
     .content-interest {
         @apply
-            p-4
+            px-4
     }
     .interest-title {
         @apply
