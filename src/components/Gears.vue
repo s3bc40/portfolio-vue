@@ -110,9 +110,6 @@ export default {
         })
         .from(".item-info", {
             opacity:0,
-            duration: 0.5
-        })
-        .from(".item-info", {
             y: 500,
             duration: 1
         })
@@ -130,8 +127,8 @@ export default {
     }
     .gears-items {
         @apply
-            md:grid-cols-3
-            sm:grid-cols-2
+            lg:grid-cols-3
+            md:grid-cols-2
             grid
             grid-cols-1
             grid-flow-row

@@ -1,7 +1,7 @@
 <template>
     <div class="profile-experience">
         <h1 class="experience-title"><i class="fas fa-code"></i> Web Developer</h1>
-        <span class="experience-level">Level: {{ currentLevel }}</span>
+        <span class="experience-level">Level: {{ current_level }}</span>
         <div class="experience-bar">
             <div 
                 class="bar-amount exp-animate">
@@ -20,6 +20,9 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
     name: "ProfileBarExperience",
     props: {
+        current_level: {
+            type: Number
+        },
         experience_gained: {
             type: Number
         },

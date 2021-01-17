@@ -3,9 +3,7 @@
         <h1 class="interest-title">Interests</h1>
         <div class="interest-cards">
             <div class="card">
-                <div class="card-img">
-                    <img src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif" alt="Environment">
-                </div>
+                <img class="card-img" src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif" alt="Environment">
                 <button class="card-title" @click="drop_env = !drop_env">
                     <h2>Environment</h2>
                     <i class="far fa-caret-square-down" :class="drop_env ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -13,16 +11,14 @@
                 <transition name="fade">
                     <div class="card-content" v-show="drop_env">
                         <p>
-                            Due to his strong connection with Nature, Sebastien seeks new challenges
-                            in favor of ecology. He enrolled to the guild of "Close to Zero Waste".
+                            Sustainable development is the main challenge of our century. I am searching
+                            for new challenges in favor of ecology or social purposes.
                         </p>
                     </div>
                 </transition>
             </div>
             <div class="card">
-                <div class="card-img">
-                    <img src="https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif" alt="Hiking">
-                </div>
+                <img class="card-img" src="https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif" alt="Hiking">
                 <button class="card-title" @click="drop_hiking = !drop_hiking">
                     <h2>Hiking</h2>
                     <i class="far fa-caret-square-down" :class="drop_hiking ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -31,15 +27,13 @@
                     <div class="card-content" v-show="drop_hiking">
                         <p>
                             Hiking is a great way to do physical activity and to discover new landscape.
-                            It allows him to share great memories with his comrades and his dog.
+                            I can share great memories with my friends, my family and my dog.
                         </p>
                     </div>
                 </transition>
             </div>
             <div class="card">
-                <div class="card-img">
-                    <img src="https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif" alt="Gaming">
-                </div>
+                <img class="card-img" src="https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif" alt="Gaming">
                 <button class="card-title" @click="drop_gaming = !drop_gaming">
                     <h2>Gaming</h2>
                     <i class="far fa-caret-square-down" :class="drop_gaming ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -47,8 +41,8 @@
                 <transition name="fade">
                     <div class="card-content" v-show="drop_gaming">
                         <p>
-                            Sebastien discovered the world of video games when he was an apprentice.
-                            He keeps this hobby to meet new people and to share humorous moments.
+                            Geek since my childhood, I am still amazed by the evolution of gaming.
+                            This hobby is great to meet new people and to share humorous moments.
                         </p>
                     </div>
                 </transition>
@@ -73,47 +67,31 @@ export default {
 <style lang="postcss" scoped>
     .content-interest {
         @apply
+            space-y-2
             px-4
-    }
-    .interest-title {
-        @apply
-            md:text-center
-            inline-block
-            w-full
-            text-4xl
-            italic
-            mb-4
     }
     .interest-cards {
         @apply
-            md:grid-cols-3
+            lg:grid-cols-3
             grid
             grid-flow-row
-            gap-2
+            gap-6
             px-6
+            place-content-center
     }
     .card {
         @apply
-            md:w-full
-            sm:w-96
             flex
             flex-col
-            w-72
-            h-full
-            border-powderBlue
-            place-self-center
+            max-w-md
+            h-auto
     }
     .card-img {
         @apply
-            w-full
-    }
-    .card-img > img {
-        @apply
-            w-full
-            h-80
-            place-self-center
-            object-fill
-            rounded-t-md
+            flex-shrink-0
+            h-60
+            object-cover
+            rounded-t-lg
     }
     .card-title {
         @apply

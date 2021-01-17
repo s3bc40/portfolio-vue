@@ -2,125 +2,18 @@
     <div class="profile-skills">
         <h1 class="skills-title">Skills</h1>
         <!-- Python -->
-        <div class="skill-container">
+        <div v-for="skill in skills" :key="skill" class="skill-container">
             <div class="skill-logo">
-                <i class="fab fa-python"></i>
+                <i :class="skill.fa"></i>
             </div>
             <div class="skill-name">
-                <span class="skill-txt">Python</span>
+                <span class="skill-txt">{{ skill.name }}</span>
             </div>
             <div class="skill-bar">
-                <div class="skill-animate w-11/12 bar-fill"></div>
+                <div class="skill-animate bar-fill" :style="{ width: skill.width }"></div>
+                <div class="bar-percent">{{ skill.width }}</div>
             </div>
         </div>
-        <!-- Git -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-git-alt"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">Git</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-10/12 bar-fill skill-animate"></div>
-            </div>
-        </div>
-        <!-- Javascript -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-js-square"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">JavaScript</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-9/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- Vue.js -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-vuejs"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">Vue.js</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-9/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- Vue.js -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-linux"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">Linux</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-9/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- Bash -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fas fa-terminal"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">Bash</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-8/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- SQL -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fas fa-database"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">SQL</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-8/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- CSS3 -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-css3-alt"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">CSS3</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-7/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- PHP -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-php"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">PHP</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-6/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>
-        <!-- Symfony -->
-        <div class="skill-container">
-            <div class="skill-logo">
-                <i class="fab fa-symfony"></i>
-            </div>
-            <div class="skill-name">
-                <span class="skill-txt">Symfony</span>
-            </div>
-            <div class="skill-bar">
-                <div class="w-6/12 bar-fill skill-animate" ></div>
-            </div>
-        </div>          
     </div>
 </template>
 
@@ -132,6 +25,22 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default {
     name: 'AboutProfileSkills',
+    data() {
+        return {
+            skills: [
+                {name: 'Python', fa: "fab fa-python", width: '90%'},
+                {name: 'Git', fa: 'fab fa-git-alt', width: '85%'},
+                {name: 'JavaScript', fa: 'fab fa-js-square', width: '80%'},
+                {name: 'Vue.js', fa: 'fab fa-vuejs', width: '80%'},
+                {name: 'Linux', fa: 'fab fa-linux', width: '80%'},
+                {name: 'Bash', fa: 'fas fa-terminal', width: '75%'},
+                {name: 'SQL', fa: 'fas fa-database', width: '75%'},
+                {name: 'CSS3', fa: 'fab fa-css3-alt', width: '70%'},
+                {name: 'PHP', fa: 'fab fa-php', width: '60%'},
+                {name: 'Symfony', fa: 'fab fa-symfony', width: '60%'},
+            ]
+        }
+    },
     mounted() {
         // Add ScrollIntoView plugin GSAP
         gsap.from(".skill-animate", {
@@ -198,7 +107,15 @@ export default {
     }
     .bar-fill {
         @apply
+            hover:bg-green-600
             h-full
             bg-green-300
+            transition-colors
+    }
+    .bar-percent {
+        @apply
+            self-center
+            text-xs
+            text-gray-400
     }
 </style>

@@ -6,6 +6,7 @@
             I also have a dog, so if you are team dog I already love you !
         </p>
         <profile-bar-experience
+            :current_level="currentLevel"
             :experience_gained="experience_gained"
             :experience_all="experience_all"
         ></profile-bar-experience>
@@ -28,19 +29,15 @@ export default {
     data() {
         return {
             birthday: moment('1993-08-25'),
+            currentLevel: 0,
             experience_gained: 0,
             experience_all: 0,
         }
     },
-    computed: {
-        currentLevel() {
-            /* Get your age as a Level of RPG */
-            return moment().diff(this.birthday, 'years')
-        },
-    },
     mounted() {
         // Compute all experience
        this.computeExperience()
+       this.computeLevel()
     },
     methods: {
         computeExperience() {
@@ -53,6 +50,10 @@ export default {
 
             this.experience_gained = moment().diff(last_birthdate, 'minutes')
             this.experience_all = next_birthdate.diff(last_birthdate, 'minutes')
+        },
+        computeLevel() {
+            /* Get your age as a Level of RPG */
+            this.currentLevel =  moment().diff(this.birthday, 'years')
         },
     },
 }
@@ -74,6 +75,7 @@ export default {
     }
     .profile-intro {
         @apply
+            w-5/6
             text-center
             prose
             mx-auto

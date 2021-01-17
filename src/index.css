@@ -12,6 +12,11 @@
           text-4xl
           text-center
           text-green-600
-          italic
-      }
+          italic;
+    }
+    a, button {
+        @apply
+            focus:outline-none
+            outline-none
+    }
 }

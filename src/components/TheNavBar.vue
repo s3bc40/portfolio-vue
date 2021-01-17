@@ -10,7 +10,7 @@
           :class="['tab-component', {
             active: currentTab === tab
           }]"
-          @click="$emit('changeComponent',tab)"
+          @click="$emit('changeComponent', tab)"
           >
           {{ tab }}
         </button>
@@ -61,9 +61,9 @@ export default {
     }
     .navbar-components {
         @apply
-            sm:text-lg
-            sm:space-x-6
-            sm:pr-4
+            md:text-lg
+            md:space-x-6
+            md:pr-4
             flex
             flex-row
             justify-end
@@ -81,5 +81,6 @@ export default {
     .active {
         @apply
             text-green-600
+            transition-colors
     }
 </style>
