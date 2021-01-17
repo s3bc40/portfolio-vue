@@ -48,12 +48,14 @@ export default {
     }
     .navbar-title {
         @apply
-            sm:text-2xl
-            sm:pl-4
-            text-base
+            md:text-2xl
+            md:pl-4
+            sm:text-xl
+            sm:pl-2
+            text-sm
             italic
             font-extrabold
-            pl-2
+            pl-1
     }
     .title-link {
         @apply
@@ -64,12 +66,15 @@ export default {
             md:text-lg
             md:space-x-6
             md:pr-4
+            sm:text-sm
+            sm:space-x-2
+            sm:pr-2
             flex
             flex-row
             justify-end
-            space-x-2
-            text-sm
-            pr-2
+            space-x-1
+            text-xs
+            pr-1
     }
     .tab-component {
         @apply

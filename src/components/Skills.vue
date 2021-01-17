@@ -75,7 +75,8 @@ export default {
     }
     .skill-logo {
         @apply
-            flex-shrink-0
+            md:block
+            hidden
             bg-green-600
             border
             rounded-l-full
@@ -86,15 +87,20 @@ export default {
     }
     .skill-name {
         @apply
-            flex-shrink-0
+            md:text-base
+            md:rounded-l-none
+            md:w-1/5
+            sm:text-sm
             bg-green-400
             border
-            w-32
             p-1
-            text-base
+            w-2/5
+            text-xs
+            rounded-l-full
             text-center
             font-bold
             italic
+            justify-center
     }
     .skill-bar {
         @apply
