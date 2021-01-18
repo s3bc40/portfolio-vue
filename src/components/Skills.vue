@@ -28,16 +28,16 @@ export default {
     data() {
         return {
             skills: [
-                {name: 'Python', fa: "fab fa-python", width: '90%'},
-                {name: 'Git', fa: 'fab fa-git-alt', width: '85%'},
-                {name: 'JavaScript', fa: 'fab fa-js-square', width: '80%'},
-                {name: 'Vue.js', fa: 'fab fa-vuejs', width: '80%'},
-                {name: 'Linux', fa: 'fab fa-linux', width: '80%'},
-                {name: 'Bash', fa: 'fas fa-terminal', width: '75%'},
-                {name: 'SQL', fa: 'fas fa-database', width: '75%'},
-                {name: 'CSS3', fa: 'fab fa-css3-alt', width: '70%'},
-                {name: 'PHP', fa: 'fab fa-php', width: '60%'},
-                {name: 'Symfony', fa: 'fab fa-symfony', width: '60%'},
+                {name: 'Python', fa: "fab fa-python", width: '55%'},
+                {name: 'Git', fa: 'fab fa-git-alt', width: '53%'},
+                {name: 'JavaScript', fa: 'fab fa-js-square', width: '49%'},
+                {name: 'Vue.js', fa: 'fab fa-vuejs', width: '47%'},
+                {name: 'Linux', fa: 'fab fa-linux', width: '45%'},
+                {name: 'Bash', fa: 'fas fa-terminal', width: '43%'},
+                {name: 'SQL', fa: 'fas fa-database', width: '42%'},
+                {name: 'CSS3', fa: 'fab fa-css3-alt', width: '40%'},
+                {name: 'PHP', fa: 'fab fa-php', width: '38%'},
+                {name: 'Symfony', fa: 'fab fa-symfony', width: '30%'},
             ]
         }
     },
