@@ -72,7 +72,8 @@ export default {
     }
     .experience-title {
         @apply
-            text-4xl
+            md:text-4xl
+            text-2xl
             text-green-600
             italic
     }

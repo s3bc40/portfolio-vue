@@ -68,7 +68,8 @@ export default {
     .content-interest {
         @apply
             space-y-2
-            px-4
+            w-11/12
+            mx-auto
     }
     .interest-cards {
         @apply

@@ -53,6 +53,17 @@ export default {
             duration: 2,
             delay: 2,
         })
+                // Animate percent text
+        gsap.from('.bar-percent',{
+            scrollTrigger: {
+                trigger: ".skill-animate",
+                start: "top center",
+            },
+            opacity: 0,
+            x: -150, 
+            transformOrigin: "left",
+            duration: 2
+        })
     },
 }
 </script>

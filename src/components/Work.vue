@@ -71,7 +71,8 @@ export default {
     .content-work {
         @apply
             space-y-2
-            px-4
+            w-11/12
+            mx-auto
     }
     .work-subtitle {
         @apply
