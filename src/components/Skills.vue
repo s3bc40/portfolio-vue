@@ -42,27 +42,24 @@ export default {
         }
     },
     mounted() {
-        // Add ScrollIntoView plugin GSAP
-        gsap.from(".skill-animate", {
+        const tl = gsap.timeline({ 
             scrollTrigger: {
                 trigger: ".skill-animate",
                 start: "top center"
             },
+        })
+        // Add ScrollIntoView plugin GSAP
+        tl.from(".skill-animate", {
             scaleX: 0,
             transformOrigin: "left",
             duration: 2,
             delay: 2,
         })
-                // Animate percent text
-        gsap.from('.bar-percent',{
-            scrollTrigger: {
-                trigger: ".skill-animate",
-                start: "top center",
-            },
+        // Animate percent text
+        .from('.bar-percent',{
             opacity: 0,
-            x: -150, 
-            transformOrigin: "left",
-            duration: 2
+            x: -100, 
+            duration: 1
         })
     },
 }
