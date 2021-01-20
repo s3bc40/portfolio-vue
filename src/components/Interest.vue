@@ -77,14 +77,16 @@ export default {
             grid
             grid-flow-row
             gap-6
-            px-6
-            place-content-center
+            justify-items-center
     }
     .card {
         @apply
+            xl:w-5/6
+            lg:w-full
+            sm:w-7/12
+            w-full
             flex
             flex-col
-            max-w-md
             h-auto
     }
     .card-img {
@@ -96,12 +98,13 @@ export default {
     }
     .card-title {
         @apply
+            sm:text-lg
             focus:outline-none
             grid
             grid-cols-2
-            bg-green-600
+            bg-purple-600
             text-white
-            text-lg
+            text-base
             font-bold
             p-2
             items-center
@@ -126,28 +129,12 @@ export default {
     }
     .card-content {
         @apply
-            bg-green-200
             prose-sm
+            bg-purple-200
             p-4
             h-full
             rounded-b-md
             shadow-xl
-    }
-    .fade-enter-active {
-        @apply
-            transition
-            duration-500
-            ease-out
-    }
-    .fade-leave-active {
-        @apply
-            transition
-            duration-200
-            ease-in
-    }
-    .fade-enter-from, 
-    .fade-leave-to {
-        @apply
-            opacity-0
+            font-medium
     }
 </style>

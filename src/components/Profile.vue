@@ -2,7 +2,7 @@
     <div class="content-profile">
         <img class="profile-img" src="../assets/img/profile_pic.png" alt="Seb Claro">
         <p class="profile-intro">
-            I'm just an average guy, with an average life, but with <b class="text-green-400">AWESOME</b> coding skills!
+            I'm just an average guy, with an average life, but with <b class="text-purple-400">AWESOME</b> coding skills!
             I also have a dog, so if you are team dog I already love you !
         </p>
         <profile-bar-experience
@@ -75,9 +75,11 @@ export default {
     }
     .profile-intro {
         @apply
+            sm:prose
+            prose-sm
             w-5/6
             text-center
-            prose
             mx-auto
+            font-medium
     }
 </style>

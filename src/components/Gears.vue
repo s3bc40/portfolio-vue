@@ -141,18 +141,21 @@ export default {
     }
     .item-logo {
         @apply
+            sm:w-14
+            sm:h-14
+            w-12
+            h-12
             flex-shrink-0
-            bg-green-800
+            bg-purple-800
             text-white
-            w-14
-            h-14
             text-center
             rounded-md
     }
     .logo-fa {
         @apply
+            sm:text-4xl
+            text-2xl
             block
-            text-4xl
             mt-2
     }
     .item-info {
@@ -162,19 +165,22 @@ export default {
     }
     .item-title {
         @apply
+            sm:text-lg
+            text-sm
             block
-            text-lg
             font-bold
-            text-green-600
+            text-purple-600
     }
     .item-description {
         @apply
             prose-sm
+            leading-relaxed
             block
+            font-medium
     }
     .item-effect {
         @apply
-            text-green-500
+            text-purple-500
             font-bold
     }
 </style>

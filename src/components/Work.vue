@@ -76,18 +76,21 @@ export default {
     }
     .work-subtitle {
         @apply
-            prose
+            sm:prose
+            prose-sm
             mx-auto
             text-center
+            font-medium
     }
     .git-link {
         @apply
-            hover:bg-green-800
+            sm:text-2xl
+            hover:bg-purple-800
             py-1
             px-2
-            bg-green-600
-            text-2xl
+            bg-purple-600
             text-white
+            text-xl
             rounded-full
             transition-colors
 
@@ -99,7 +102,6 @@ export default {
             grid-cols-1
             grid-flow-row
             gap-6
-            px-6
             justify-items-center
     }
     .project {
@@ -130,7 +132,7 @@ export default {
             justify-center
             h-full
             w-full
-            bg-green-600
+            bg-purple-600
             transition-all
             transform
             opacity-0
@@ -142,6 +144,7 @@ export default {
         @apply
             text-2xl
             text-white
+            font-bold
     }
     .text-content {
         @apply
@@ -149,12 +152,13 @@ export default {
             text-center
             text-white
             p-2
+            font-medium
     }
     .text-status {
         @apply
             text-xs
             text-white
-            font-bold
+            font-normal
             italic
     }
 </style>

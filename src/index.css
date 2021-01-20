@@ -8,15 +8,18 @@
 @layer base {
     h1 {
         @apply
-          w-full
-          text-4xl
-          text-center
-          text-green-600
-          italic;
+            md:text-4xl
+            text-2xl
+            mb-4
+            w-full
+            text-center
+            text-purple-600
+            italic
+            font-extrabold;
     }
     a, button {
         @apply
             focus:outline-none
-            outline-none
+            outline-none;
     }
 }

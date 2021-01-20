@@ -34,7 +34,7 @@ export default {
             items-center
             w-full
             h-80
-            bg-green-600
+            bg-purple-600
     }
     .footer-title {
         @apply
@@ -51,7 +51,7 @@ export default {
     }
     .media {
         @apply
-            hover:text-green-600
+            hover:text-purple-600
             hover:bg-white
             text-white
             font-bold
@@ -69,6 +69,7 @@ export default {
             text-white
             text-center
             place-self-center 
+            font-normal
     }
     .text-year{
         @apply

@@ -74,8 +74,6 @@ export default {
         @apply
             md:text-4xl
             text-2xl
-            text-green-600
-            italic
     }
     .experience-level {
         @apply
@@ -89,13 +87,13 @@ export default {
             w-full
             h-1
             rounded-full
-            bg-green-300
+            bg-purple-300
     }
     .bar-amount {
         @apply 
             h-full
             rounded-full
-            bg-green-600
+            bg-purple-600
     }
     .experience-text {
         @apply

@@ -80,6 +80,8 @@ export default {
     @apply
       bg-white
       text-gray-600
+      font-sans
+      subpixel-antialiased
   }
   .components-container {
     @apply

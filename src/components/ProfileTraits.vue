@@ -106,7 +106,7 @@ export default {
         @apply
             text-xl
             self-center
-            text-green-600
+            text-purple-600
     }
     .trait-text {
         @apply
@@ -114,11 +114,12 @@ export default {
             w-20
             text-center
             prose
+            font-medium
     }
     .trait-star {
         @apply
             flex
-            text-green-400
+            text-purple-400
             space-x-0 
             self-center       
     }

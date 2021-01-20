@@ -28,10 +28,10 @@ export default {
     data() {
         return {
             skills: [
-                {name: 'Python', fa: "fab fa-python", width: '55%'},
+                {name: 'JavaScript', fa: 'fab fa-js-square', width: '56%'},
+                {name: 'Vue.js', fa: 'fab fa-vuejs', width: '55%'},
+                {name: 'Python', fa: "fab fa-python", width: '54%'},
                 {name: 'Git', fa: 'fab fa-git-alt', width: '53%'},
-                {name: 'JavaScript', fa: 'fab fa-js-square', width: '49%'},
-                {name: 'Vue.js', fa: 'fab fa-vuejs', width: '47%'},
                 {name: 'Linux', fa: 'fab fa-linux', width: '45%'},
                 {name: 'Bash', fa: 'fas fa-terminal', width: '43%'},
                 {name: 'SQL', fa: 'fas fa-database', width: '42%'},
@@ -44,7 +44,7 @@ export default {
     mounted() {
         const tl = gsap.timeline({ 
             scrollTrigger: {
-                trigger: ".skill-animate",
+                trigger: ".profile-skills",
                 start: "top center"
             },
         })
@@ -85,7 +85,7 @@ export default {
         @apply
             md:block
             hidden
-            bg-green-600
+            bg-purple-600
             border
             rounded-l-full
             w-1/12
@@ -99,14 +99,14 @@ export default {
             md:rounded-l-none
             md:w-1/5
             sm:text-sm
-            bg-green-400
+            bg-purple-400
             border
             p-1
             w-2/5
             text-xs
             rounded-l-full
             text-center
-            font-bold
+            font-semibold
             italic
             justify-center
     }
@@ -121,9 +121,9 @@ export default {
     }
     .bar-fill {
         @apply
-            hover:bg-green-600
+            hover:bg-purple-600
             h-full
-            bg-green-300
+            bg-purple-300
             transition-colors
     }
     .bar-percent {

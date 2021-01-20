@@ -42,7 +42,7 @@ export default {
             w-screen
             p-2
             bg-white
-            text-green-400
+            text-purple-400
             shadow-lg
             z-10
     }
@@ -50,26 +50,26 @@ export default {
         @apply
             md:text-2xl
             md:pl-4
-            sm:text-xl
             sm:pl-2
-            text-sm
+            text-xl
             italic
-            font-extrabold
             pl-1
+            font-extrabold
     }
     .title-link {
         @apply
-            text-green-400
+            text-purple-400
     }
     .navbar-components {
         @apply
             md:text-lg
             md:space-x-6
             md:pr-4
+            sm:flex
             sm:text-sm
             sm:space-x-2
             sm:pr-2
-            flex
+            hidden
             flex-row
             justify-end
             space-x-1
@@ -78,14 +78,14 @@ export default {
     }
     .tab-component {
         @apply
-            hover:text-green-800
+            hover:text-purple-800
             focus:outline-none
             transition-colors
-            font-bold
+            font-extrabold
     }
     .active {
         @apply
-            text-green-600
+            text-purple-600
             transition-colors
     }
 </style>
