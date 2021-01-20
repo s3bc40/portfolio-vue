@@ -44,7 +44,7 @@ export default {
     mounted() {
         const tl = gsap.timeline({ 
             scrollTrigger: {
-                trigger: ".profile-skills",
+                trigger: ".skill-animate",
                 start: "top center"
             },
         })
@@ -53,7 +53,6 @@ export default {
             scaleX: 0,
             transformOrigin: "left",
             duration: 2,
-            delay: 2,
         })
         // Animate percent text
         .from('.bar-percent',{
