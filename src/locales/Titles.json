@@ -1,0 +1,16 @@
+{
+    "en": {
+        "Profile": "Profile",
+        "Skills": "Skills",
+        "Gears": "Gears",
+        "Interests": "Interests",
+        "Work": "Work"
+    },
+    "fr": {
+        "Profile": "Profil",
+        "Skills": "Compétences",
+        "Gears": "Equipement",
+        "Interests": "Intérêts",
+        "Work": "Travaux"
+    }
+}

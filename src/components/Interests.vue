@@ -1,55 +1,49 @@
 <template>
     <div class="content-interest">
-        <h1 class="interest-title">Interests</h1>
+        <h1 class="interest-title">{{ $t('Interests') }}</h1>
         <div class="interest-cards">
             <div class="card">
                 <img class="card-img" src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif" alt="Environment">
                 <button class="card-title" @click="drop_env = !drop_env">
-                    <h2>Environment</h2>
+                    <h2>{{ $t('environment') }}</h2>
                     <i class="far fa-caret-square-down" :class="drop_env ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
                     <div class="card-content" v-show="drop_env">
-                        <p>
-                            Sustainable development is the main challenge of our century. I am searching
-                            for new challenges in favor of ecology or social purposes.
-                        </p>
+                        <p>{{ $t('environment_detail') }}</p>
                     </div>
                 </transition>
             </div>
             <div class="card">
                 <img class="card-img" src="https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif" alt="Hiking">
                 <button class="card-title" @click="drop_hiking = !drop_hiking">
-                    <h2>Hiking</h2>
+                    <h2>{{ $t('hiking') }}</h2>
                     <i class="far fa-caret-square-down" :class="drop_hiking ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
                     <div class="card-content" v-show="drop_hiking">
-                        <p>
-                            Hiking is a great way to do physical activity and to discover new landscape.
-                            I can share great memories with my friends, my family and my dog.
-                        </p>
+                        <p>{{ $t('hiking_detail') }}</p>
                     </div>
                 </transition>
             </div>
             <div class="card">
                 <img class="card-img" src="https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif" alt="Gaming">
                 <button class="card-title" @click="drop_gaming = !drop_gaming">
-                    <h2>Gaming</h2>
+                    <h2>{{ $t('gaming') }}</h2>
                     <i class="far fa-caret-square-down" :class="drop_gaming ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
                     <div class="card-content" v-show="drop_gaming">
-                        <p>
-                            Geek since my childhood, I am still amazed by the evolution of gaming.
-                            This hobby is great to meet new people and to share humorous moments.
-                        </p>
+                        <p>{{ $t('gaming_detail') }}</p>
                     </div>
                 </transition>
             </div>
         </div>
     </div>
 </template>
+
+<i18n src="../locales/Titles.json"></i18n>
+<i18n src="../locales/Interests.json"></i18n>
 
 <script>
 export default {

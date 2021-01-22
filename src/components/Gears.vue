@@ -1,6 +1,6 @@
 <template>
     <div class="content-gears">
-        <h1 class="content-title gears-title">Gears</h1>
+        <h1 class="content-title gears-title">{{ $t('Gears') }}</h1>
         <div class="gears-items">
             <div class="item-container">
                 <div class="item-logo">
@@ -8,11 +8,7 @@
                 </div>
                 <div class="item-info">
                     <h2 class="item-title">VS Code IDE</h2>
-                    <p class="item-description">
-                        Intergrated development environment, allowing to code efficiently.
-                        My preference, until there is better.Gain <span class="item-effect">30% of coding speed</span> 
-                        and <span class="item-effect">40% of coding precision</span>.
-                    </p>  
+                    <p class="item-description" v-html="$t('description_ide')"></p>  
                 </div>
             </div>
             <div class="item-container">
@@ -20,12 +16,8 @@
                     <i class="fas fa-coffee logo-fa"></i>
                 </div>
                 <div class="item-info">
-                    <h2 class="item-title">Coffee</h2>
-                    <p class="item-description">
-                        My fuel to be the best developer you'll ever seen. But moderatly,
-                        because I can become a little bit crazy. Allows to to gain
-                        <span class="item-effect">60% of energy</span>.
-                    </p>  
+                    <h2 class="item-title">{{ $t('coffee') }}</h2>
+                    <p class="item-description" v-html="$t('description_coffee')"></p>  
                 </div>
             </div>
             <div class="item-container">
@@ -33,13 +25,8 @@
                     <i class="fas fa-glasses logo-fa"></i>
                 </div>
                 <div class="item-info">
-                    <h2 class="item-title">Glasses</h2>
-                    <p class="item-description">
-                        Protection against extra bright screen. Very effective
-                        during the night. It also improves my eyesight, by detecting 
-                        the worst bugs. Gain <span class="item-effect">20% of energy</span> and
-                        <span class="item-effect">30% of patience</span>.
-                    </p>  
+                    <h2 class="item-title">{{ $t('glasses') }}</h2>
+                    <p class="item-description" v-html="$t('description_glasses')"></p>  
                 </div>
             </div>
             <div class="item-container">
@@ -48,12 +35,7 @@
                 </div>
                 <div class="item-info">
                     <h2 class="item-title">Stack-overflow</h2>
-                    <p class="item-description">
-                        Encyclopedia with programming resources.
-                        It is a space where we can share knowledge, or we can be crushed. 
-                        Gain <span class="item-effect">"Unlimited power" status</span> or
-                        <span class="item-effect">"Helpless developer" status</span>.
-                    </p>  
+                    <p class="item-description" v-html="$t('description_stackOVF')"></p>  
                 </div>
             </div>
             <div class="item-container">
@@ -62,11 +44,7 @@
                 </div>
                 <div class="item-info">
                     <h2 class="item-title">Trello</h2>
-                    <p class="item-description">
-                        Required to be organised during the development of an application.
-                        Really important to respect the deadlines, as much as possible with others. 
-                        Improve <span class="item-effect">teamwork by 70%</span>.
-                    </p>  
+                    <p class="item-description" v-html="$t('description_trello')"></p>  
                 </div>
             </div>
             <div class="item-container">
@@ -75,17 +53,15 @@
                 </div>
                 <div class="item-info">
                     <h2 class="item-title">Yuki</h2>
-                    <p class="item-description">
-                        The best dog of the world, I am objective. She seems to be
-                        an angel, but she has a strong temper, so be careful. 
-                        <span class="item-effect">Refuel energy and patience</span> to the
-                        maximum.
-                    </p>  
+                    <p class="item-description" v-html="$t('description_yuki')"></p>  
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<i18n src="../locales/Titles.json"></i18n>
+<i18n src="../locales/Gears.json"></i18n>
 
 <script>
 // Importing GreenSock

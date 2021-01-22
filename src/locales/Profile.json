@@ -1,0 +1,16 @@
+{
+    "en": {
+        "profile_intro": "I'm just an average guy, with an average life, but with <b class=\"text-purple-400\">AWESOME</b> coding skills!\nI also have a dog, so if you are team dog I already love you !",
+        "profile_job": "Web Developer",
+        "profile_level": "Level",
+        "profile_from": "from",
+        "profile_level_next": "next level"
+    },
+    "fr": {
+        "profile_intro": "Homme ordinaire, avec une vie ordinaire, mais des ressources <b class=\"text-purple-400\">IMPORTANTES</b> en programmation !\nJ'ai aussi un chien, donc si vous êtes team chien je vous aime déjà !",
+        "profile_job": "Développeur Web",
+        "profile_level": "Niveau",
+        "profile_from": "depuis",
+        "profile_level_next": "prochain niveau"
+    }
+}

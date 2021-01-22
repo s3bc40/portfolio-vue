@@ -4,7 +4,7 @@
             <div class="trait-logo">
                 <i class="fas fa-users-cog"></i>
             </div>
-            <span class="trait-text">Teamwork:</span>
+            <span class="trait-text">{{ $t('teamwork') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -17,7 +17,7 @@
             <div class="trait-logo">
                 <i class="fas fa-chess"></i>
             </div>
-            <span class="trait-text">Patience:</span>
+            <span class="trait-text">{{ $t('patience') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -30,7 +30,7 @@
             <div class="trait-logo">
                 <i class="fas fa-balance-scale"></i>
             </div>
-            <span class="trait-text">Honesty:</span>
+            <span class="trait-text">{{ $t('honesty') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -43,7 +43,7 @@
             <div class="trait-logo">
                 <i class="fas fa-battery-three-quarters"></i>
             </div>
-            <span class="trait-text">Energy:</span>
+            <span class="trait-text">{{ $t('energy') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -56,7 +56,7 @@
             <div class="trait-logo">
                 <i class="fas fa-bed"></i>
             </div>
-            <span class="trait-text">Laziness:</span>
+            <span class="trait-text">{{ $t('laziness') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -69,7 +69,7 @@
             <div class="trait-logo">
                 <i class="fas fa-heart-broken"></i>
             </div>
-            <span class="trait-text">Selfish:</span>
+            <span class="trait-text">{{ $t('selfish') }}:</span>
             <div class="trait-star">
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
@@ -80,6 +80,8 @@
         </div>
     </div>
 </template>
+
+<i18n src="../locales/ProfileTraits.json"></i18n>
 
 <script>
 export default {

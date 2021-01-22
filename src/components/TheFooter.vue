@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <p class="footer-title">To contact me, visits my social media or send me an email :</p>
+        <p class="footer-title">{{ $t('footer_intro') }}</p>
         <div class="footer-media">
             <a href="https://www.linkedin.com/in/sgoncalvesclaro-bioinfo/" class="media" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/s3bc40" class="media" target="_blank"><i class="fab fa-github"></i></a>
@@ -9,12 +9,15 @@
             <a href="mailto:s.goncalvesclaro@gmail.com" class="media" target="_blank"><i class="far fa-envelope"></i></a>
         </div>
         <p class="footer-text">
-            Made with Vue.js, GreenSock, TailwindCSS
-            <br>Hosted by Netlify
+            {{ $t('footer_made') }}
+            <br>{{ $t('footer_host') }}
+            <br>{{ $t('footer_source') }} <a href="https://github.com/s3bc40/portfolio-vue" class="text-source" target="_blank">{{ $t('footer_here') }}</a>
             <br>Claro Sebastien <span class="text-year">@2021</span>
         </p>
     </footer>
 </template>
+
+<i18n src="../locales/TheFooter.json"></i18n>
 
 <script>
 export default {
@@ -70,6 +73,11 @@ export default {
             text-center
             place-self-center 
             font-normal
+    }
+    .text-source{
+        @apply
+            hover:underline
+            font-bold
     }
     .text-year{
         @apply

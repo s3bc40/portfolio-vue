@@ -12,11 +12,13 @@
           }]"
           @click="$emit('changeComponent', tab)"
           >
-          {{ tab }}
+          {{ $t(tab) }}
         </button>
       </div>
     </div>
 </template>
+
+<i18n src="../locales/Titles.json"></i18n>
 
 <script>
 export default {
@@ -29,7 +31,8 @@ export default {
             }
         },
         currentTab: String
-    }
+    },
+    emits: ['changeComponent']
 }
 </script>
 

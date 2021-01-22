@@ -1,0 +1,18 @@
+{
+    "en": {
+        "environment": "Environment",
+        "environment_detail": "Sustainable development is the main challenge of our century. I am searching\nfor new challenges in favor of ecology or social purposes.",
+        "hiking": "Hiking",
+        "hiking_detail": "Hiking is a great way to do physical activity and to discover new landscape.\nI can share great memories with my friends, my family and my dog.",
+        "gaming": "Gaming",
+        "gaming_detail": "Geek since my childhood, I am still amazed by the evolution of gaming.\nThis hobby is great to meet new people and to share humorous moments."
+    },
+    "fr": {
+        "environment": "Environnement",
+        "environment_detail": "Le développement durable est le principal défi de notre siècle. Je recherche\n de nouveaux challenges en faveur de l’écologie ou du social.",
+        "hiking": "Randonnée",
+        "hiking_detail": "La randonnée est un excellent moyen de faire de l'activité physique et de découvrir de nouveaux paysages.\nJe peux partager de bons souvenirs avec mes amis, ma famille et mon chien.",
+        "gaming": "Jeux vidéo",
+        "gaming_detail": "Geek depuis mon enfance, je suis étonné par l'évolution impressionante du gaming.\nCe passe-temps est formidable pour rencontrer de nouvelles personnes et partager des moments humoristiques."
+    }
+}

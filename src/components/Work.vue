@@ -1,8 +1,8 @@
 <template>
     <div class="content-work">
-        <h1 class="work-title">Work</h1>
+        <h1 class="work-title">{{ $t('Work') }}</h1>
         <p class="work-subtitle">
-            Here are a some of my personnal projects. <br>Check other projects on my Github
+            {{ $t('work_subtitle') }}
             <a href="https://github.com/s3bc40" target="_blank"><i class="fab fa-github-alt git-link"></i></a>
         </p>
         <div class="work-projects">
@@ -10,16 +10,9 @@
                 <a href="https://s3bc40.github.io/" target="_blank">
                     <img src="../assets/img/resumeMD.png" class="project-image" alt="Resume Markdown">
                     <div class="project-text">
-                        <h2 class="text-title">
-                            Resume Markdown
-                        </h2>
-                        <p class="text-content">
-                            Github Pages maintained by Jekyll to render markdown
-                            as HTML page. I used Jekyll (Ruby) locally to work on
-                            it and I took Sass for styling the website. My resume
-                            is online and printable as a pdf, in french or english.
-                        </p>
-                        <p class="text-status">Status : Online and updated</p> 
+                        <h2 class="text-title">{{ $t('work_resume_title') }}</h2>
+                        <p class="text-content">{{ $t('work_resume_detail') }}</p>
+                        <p class="text-status">{{ $t('status_online_updt') }}</p> 
                     </div>
                 </a>
             </button>
@@ -27,16 +20,9 @@
                 <a href="https://github.com/s3bc40/teague-bot" target="_blank">
                     <img src="../assets/img/teagueBot.png" class="project-image" alt="Teague Bot Discord">
                     <div class="project-text">
-                        <h2 class="text-title">
-                            Discord bot Teague
-                        </h2>
-                        <p class="text-content">
-                            Bot deployed on Heroku and on our Discord server.
-                            Launched on a Node server and developed with the library Discord.js 
-                            to interact with Discord. It is still a work in progress but some
-                            command are already implemented.
-                        </p>
-                        <p class="text-status">Status : Online and work in progres</p>
+                        <h2 class="text-title">{{ $t('work_bot_title') }}</h2>
+                        <p class="text-content">{{ $t('work_bot_detail') }}</p>
+                        <p class="text-status">{{ $t('status_online_wip') }}</p>
                     </div>
                 </a>
             </button>
@@ -44,22 +30,18 @@
                 <a href="https://s3bc40.github.io/binary-converter" target="_blank">
                     <img src="../assets/img/binary.png" class="project-image" alt="Binary Converter">
                     <div class="project-text">
-                        <h2 class="text-title">
-                            Binary converter
-                        </h2>
-                        <p class="text-content">
-                            First step with Vue.js to understand how it works.
-                            A simple binary converter from binary to number,
-                            number to binary or text to binary. It is a single page
-                            application, developed with Vue CLI.
-                        </p>
-                        <p class="text-status">Status : Online and updated</p>
+                        <h2 class="text-title">{{ $t('work_binary_title') }}</h2>
+                        <p class="text-content">{{ $t('work_binary_detail') }}</p>
+                        <p class="text-status">{{ $t('status_online_updt') }}</p>
                     </div>
                 </a>
             </button>
         </div>
     </div>
 </template>
+
+<i18n src="../locales/Titles.json"></i18n>
+<i18n src="../locales/Work.json"></i18n>
 
 <script>
 export default {
@@ -85,7 +67,8 @@ export default {
     .git-link {
         @apply
             sm:text-2xl
-            hover:bg-purple-800
+            hover:text-purple-600
+            hover:bg-white
             py-1
             px-2
             bg-purple-600

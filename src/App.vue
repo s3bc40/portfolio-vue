@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <div class="locale">
+      <label for="locale">Locale</label>
+      <select v-model="$i18n.locale">
+        <option>en</option>
+        <option>fr</option>
+      </select>
+    </div>
     <the-nav-bar
       :tabs="tabs"
       :currentTab="currentTab"
@@ -9,7 +16,7 @@
       <profile id="Profile"></profile>
       <skills id="Skills"></skills>
       <gears id="Gears"></gears>
-      <interest id="Interest"></interest>
+      <interests id="Interests"></interests>
       <work id="Work"></work>
     </div>
     <the-footer></the-footer>
@@ -27,7 +34,7 @@ import TheFooter from './components/TheFooter'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
 import Gears from './components/Gears'
-import Interest from './components/Interest'
+import Interests from './components/Interests'
 import Work from './components/Work'
 
 export default {
@@ -38,7 +45,7 @@ export default {
     Profile,
     Skills,
     Gears,
-    Interest,
+    Interests,
     Work,
   },
   data() {
@@ -47,7 +54,7 @@ export default {
         'Profile', 
         'Skills', 
         'Gears',
-        'Interest', 
+        'Interests', 
         'Work', 
       ],
       currentTab: 'Profile',
@@ -82,6 +89,14 @@ export default {
       text-gray-600
       font-sans
       subpixel-antialiased
+  }
+  .locale {
+    @apply
+      absolute
+      top-20
+      right-10
+      flex
+      space-x-1
   }
   .components-container {
     @apply

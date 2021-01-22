@@ -1,0 +1,16 @@
+{
+    "en": {
+        "footer_intro": "Visits my social media, send me an email or download my resume:",
+        "footer_made": "Made with Vue.js, GreenSock, TailwindCSS",
+        "footer_host": "Hosted by Netlify",
+        "footer_source": "Source code available",
+        "footer_here": "here"
+    },
+    "fr": {
+        "footer_intro": "Allez voir mes réseaux sociaux, envoyez moi un email ou téléchargé mon CV :",
+        "footer_made": "Créée avec Vue.js, GreenSock, TailwindCSS",
+        "footer_host": "Hébergé par Netlify",
+        "footer_source": "Code source disponible",
+        "footer_here": "ici"
+    }
+}

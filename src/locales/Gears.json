@@ -1,0 +1,22 @@
+{
+    "en": {
+        "description_ide": "Integrated development environment, allowing to code efficiently.\nMy preference, until there is better.Gain <span class=\"item-effect\">30% of coding speed</span>\nand <span class=\"item-effect\">40% of coding precision</span>.",
+        "coffee": "Coffee",
+        "description_coffee": "My fuel to be the best developer you'll ever seen. But moderatly,\nbecause I can become a little bit crazy. Allows to to gain\n<span class=\"item-effect\">60% of energy</span>.",
+        "glasses": "Glasses",
+        "description_glasses": "Protection against extra bright screen. Very effective\nduring the night. It also improves my eyesight, by detecting\nthe worst bugs. Gain <span class=\"item-effect\">20% of energy</span> and\n<span class=\"item-effect\">30% of patience</span>.",
+        "description_stackOVF": "Encyclopedia with programming resources.\nIt is a space where we can share knowledge, or we can be crushed.\nGain <span class=\"item-effect\">\"Unlimited power\" status</span> or\n<span class=\"item-effect\">\"Helpless developer\" status</span>.",
+        "description_trello": "Required to be organised during the development of an application.\nReally important to respect the deadlines, as much as possible with others.\nImprove <span class=\"item-effect\">teamwork by 70%</span>.",
+        "description_yuki": "The best dog of the world, I am objective. She seems to be\nan angel, but she has a strong temper, so be careful.\n<span class=\"item-effect\">Refuel energy and patience</span> to the\nmaximum."
+    },
+    "fr": {
+        "description_ide": "Environnement de développement intégré, permettant de coder efficacement.\nMa préférence, jusqu'à ce qu'il y ait mieux. Gagne <span class=\"item-effect\">30% en vitesse de programmation</span>\net <span class =\"item-effet\">40% en précision de code</span>.",
+        "coffee": "Café",
+        "description_coffee": "Mon carburant pour être le meilleur développeur que vous ayez jamais vu. Mais modérément,\n parce que je peux devenir un peu fou. Permet de gagner\n<span class=\"item-effect\">60% d'énergie</span>.",
+        "glasses": "Lunnettes",
+        "description_glasses": "Protection contre les écrans très lumineux. Très efficace\n pendant la nuit. Cela améliore également ma vue, en détectant\nles pires bug. Gagne <span class=\"item-effect\">20% d'énergie</span> et\n<span class=\"item-effect\">30% de patience</span>.",
+        "description_stackOVF": "Encyclopédie avec des ressources en programmation.\nC'est un espace où nous pouvons partager nos connaissances, ou bien se faire écraser.\nPrend le statut <span class=\"item-effect\">\"Surpuissant\"</span> ou\n<span class=\"item-effect\">\"Développeur perdu\"</span>.",
+        "description_trello": "Nécessaire pour être organisé lors du développement d'une application.\nVraiment important de respecter les délais, avec une équipe c'est efficace.\nAméliorer le <span class=\"item-effect\">travail d'équipe de 70%</span>.",
+        "description_yuki": "Le meilleur chien du monde, je suis objectif. Elle semble être\n un ange, mais elle a un fort caractère, alors soyez prudent.\n<span class=\"item-effect\">Restaure l'énergie et la patience</span> au\nmaximum."
+    }
+}

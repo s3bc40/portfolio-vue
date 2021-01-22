@@ -1,6 +1,6 @@
 <template>
     <div class="profile-skills">
-        <h1 class="skills-title">Skills</h1>
+        <h1 class="skills-title">{{ $t('Skills') }}</h1>
         <!-- Python -->
         <div v-for="skill in skills" :key="skill" class="skill-container">
             <div class="skill-logo">
@@ -16,6 +16,8 @@
         </div>
     </div>
 </template>
+
+<i18n src="../locales/Titles.json"></i18n>
 
 <script>
 // Importing GreenSock

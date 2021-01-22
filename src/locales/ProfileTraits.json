@@ -1,0 +1,18 @@
+{
+    "en": {
+        "teamwork": "Teamwork",
+        "patience": "Patience",
+        "honesty": "Honesty",
+        "energy": "Energy",
+        "laziness": "Laziness",
+        "selfish": "Selfish"
+    },
+    "fr": {
+        "teamwork": "Teamwork",
+        "patience": "Patience",
+        "honesty": "Honnête",
+        "energy": "Energie",
+        "laziness": "Inactif",
+        "selfish": "Egoïste"
+    }
+}
