@@ -4,9 +4,10 @@
         <div class="footer-media">
             <a href="https://www.linkedin.com/in/sgoncalvesclaro-bioinfo/" class="media" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/s3bc40" class="media" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/s_GClaro" class="media" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.reddit.com/user/s3bc40" class="media" target="_blank"><i class="fab fa-reddit-alien"></i></a>
             <a href="mailto:s.goncalvesclaro@gmail.com" class="media" target="_blank"><i class="far fa-envelope"></i></a>
+            <a href="/assets/docs/CLARO_Sebastien_EN_DevWeb.pdf" class="media" v-show="$i18n.locale == 'en'" download><i class="fas fa-arrow-circle-down"></i></a>
+            <a href="/assets/docs/CLARO_Sebastien_FR_DevWeb.pdf" class="media" v-show="$i18n.locale == 'fr'" download><i class="fas fa-arrow-circle-down"></i></a>
         </div>
         <p class="footer-text">
             {{ $t('footer_made') }}

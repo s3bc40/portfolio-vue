@@ -29,6 +29,7 @@ import { gsap } from 'gsap'
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
+// import components 
 import TheNavBar from './components/TheNavBar'
 import TheFooter from './components/TheFooter'
 import Profile from './components/Profile'
@@ -92,11 +93,26 @@ export default {
   }
   .locale {
     @apply
+      sm:left-8
+      sm:top-14
+      sm:text-base
+      lg:text-lg
       absolute
-      top-20
-      right-10
+      top-16
+      left-2
       flex
       space-x-1
+      place-items-center
+      text-sm
+  }
+  .locale select {
+    @apply
+      focus:outline-none
+      bg-purple-600
+      rounded-full
+      text-white
+      font-semibold
+      p-1
   }
   .components-container {
     @apply

@@ -16,5 +16,12 @@ module.exports = {
           .type('javascript/auto')
           .use('i18n')
             .loader('@intlify/vue-i18n-loader')
+      config.module.rule('pdf')
+        .test(/\.(pdf)(\?.*)?$/)
+        .use('file-loader')
+          .loader('file-loader')
+          .options({
+            name: 'assets/pdf/[name].[hash:8].[ext]'
+          })
     }
   }

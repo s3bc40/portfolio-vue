@@ -1,6 +1,6 @@
 <template>
     <div class="content-profile">
-        <img class="profile-img" src="../assets/img/profile_pic.png" alt="Seb Claro">
+        <img class="profile-img" src="/assets/img/profile_pic.png" alt="Seb Claro">
         <p class="profile-intro" v-html="$t('profile_intro')"></p>
         <div class="profile-experience">
             <h1 class="experience-title"><i class="fas fa-code"></i> {{ $t('profile_job') }}</h1>
