@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <div class="locale">
-      <label for="locale">Locale</label>
-      <select v-model="$i18n.locale">
-        <option>en</option>
-        <option>fr</option>
-      </select>
+    <div v-if="isLoading">
+      <the-loading-page></the-loading-page>
     </div>
-    <the-nav-bar
-      :tabs="tabs"
-      :currentTab="currentTab"
-      @changeComponent="onChangeComponent"
-    ></the-nav-bar>
-    <div class="components-container">
-      <profile id="Profile"></profile>
-      <skills id="Skills"></skills>
-      <gears id="Gears"></gears>
-      <interests id="Interests"></interests>
-      <work id="Work"></work>
+    <div id="app-main" v-else>
+      <div class="locale">
+        <select v-model="$i18n.locale">
+          <option>en</option>
+          <option>fr</option>
+        </select>
+      </div>
+      <the-nav-bar
+        :tabs="tabs"
+        :currentTab="currentTab"
+        @changeComponent="onChangeComponent"
+      ></the-nav-bar>
+      <div class="components-container">
+        <profile id="Profile"></profile>
+        <skills id="Skills"></skills>
+        <gears id="Gears"></gears>
+        <interests id="Interests"></interests>
+        <work id="Work"></work>
+      </div>
+      <the-footer></the-footer>
     </div>
-    <the-footer></the-footer>
   </div>
 </template>
 
@@ -30,6 +34,7 @@ import { ScrollToPlugin, ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
 // import components 
+import TheLoadingPage from './components/TheLoadingPage'
 import TheNavBar from './components/TheNavBar'
 import TheFooter from './components/TheFooter'
 import Profile from './components/Profile'
@@ -41,6 +46,7 @@ import Work from './components/Work'
 export default {
   name: 'App',
   components: {
+    TheLoadingPage,
     TheNavBar,
     TheFooter,
     Profile,
@@ -51,6 +57,7 @@ export default {
   },
   data() {
     return {
+      isLoading: true,
       tabs: [
         'Profile', 
         'Skills', 
@@ -62,6 +69,8 @@ export default {
     }
   },
   mounted() {
+    // Loading page of 5 secondes
+    this.loadingApp()
     // GreenSock ScrollTrigger change active tab Navbar
     for (const tab of this.tabs) {
       ScrollTrigger.create({
@@ -73,7 +82,19 @@ export default {
       })
     }
   },
+  updated() {
+    // Opacity change when loading page done
+    gsap.from('#app-main', {
+      opacity: 0,
+      duration:1,
+    })
+  },
   methods: {
+    loadingApp() {
+      setInterval(() => {
+        this.isLoading = false
+      },5000)
+    },
     onChangeComponent(tab) {
       this.currentTab = tab
       const idToScroll = `#${tab}`
@@ -93,17 +114,17 @@ export default {
   }
   .locale {
     @apply
-      sm:left-8
+      md:right-6
+      sm:right-2
       sm:top-14
-      sm:text-base
-      lg:text-lg
-      absolute
-      top-16
-      left-2
+      fixed
+      top-2
+      right-2
       flex
       space-x-1
       place-items-center
       text-sm
+      z-20
   }
   .locale select {
     @apply

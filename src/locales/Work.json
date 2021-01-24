@@ -2,23 +2,23 @@
     "en": {
         "status_online_updt": "Status : Online and updated",
         "status_online_wip": "Status : Online and work in progress",
-        "work_subtitle": "Here are a some of my personnal projects.\nCheck other projects on my Github",
+        "work_subtitle": "Here are a some of my personnal projects.\n Check other projects on my Github",
         "work_resume_title": "Resume Markdown",
-        "work_resume_detail": "Github Pages maintained by Jekyll to render Markdown\nas HTML page. I used Jekyll (Ruby) locally to work on\nit and I took Sass for styling the website. The resume\nis online and printable as a pdf, in french or english.",
+        "work_resume_detail": "Github Pages maintained by Jekyll to render Markdown\n as HTML page. I used Jekyll (Ruby) locally to work on\n it and I took Sass for styling the website. The resume\n is online and printable as a pdf, in french or english.",
         "work_bot_title": "Discord bot Teague",
-        "work_bot_detail": "Bot deployed on Heroku and on our Discord server.\nDeveloped with the library Discord.js\nto interact with users in Discord. It is still a work in progress but some\ncommand are already implemented.",
+        "work_bot_detail": "Bot deployed on Heroku and on our Discord server.\n Developed with the library Discord.js\n to interact with users in Discord. It is still a work in progress but some\n command are already implemented.",
         "work_binary_title": "Binary converter",
-        "work_binary_detail": "First step with Vue.js to understand how it works.\nA simple binary converter from binary to number,\nnumber to binary or text to binary. It is a single page\napplication (SPA), developed with Vue CLI."
+        "work_binary_detail": "First step with Vue.js to understand how it works.\nA simple binary converter from binary to number,\n number to binary or text to binary. It is a single page\n application (SPA), developed with Vue CLI."
     },
     "fr": {
         "status_online_updt": "Statut: En ligne et mis à jour",
         "status_online_wip": "Statut: en ligne et travaux en cours",
-        "work_subtitle": "Voici quelques-uns de mes projets personnels.\nD'autres projets sont disponible sur mon Github",
+        "work_subtitle": "Voici quelques-uns de mes projets personnels.\n D'autres projets sont disponible sur mon Github",
         "work_resume_title": "CV en Markdown",
-        "work_resume_detail": "Github Pages maintenues par Jekyll pour viualiser la page Markdown en HTML.\nJ'ai utilisé Jekyll (Ruby) pour travailler en local\net j'ai pris Sass pour styliser le site Web. Le CV\nest en ligne et imprimable au format pdf, en français ou en anglais.",
+        "work_resume_detail": "Github Pages maintenues par Jekyll pour viualiser la page Markdown en HTML.\n J'ai utilisé Jekyll (Ruby) pour travailler en local\n et j'ai pris Sass pour styliser le site Web. Le CV\n est en ligne et imprimable au format pdf, en français ou en anglais.",
         "work_bot_title": "Bot Discord Teague",
-        "work_bot_detail": "Bot déployé sur Heroku et sur notre serveur Discord.\nDéveloppé avec la bibliothèque Discord.js\npour interagir avec les utilisateurs sur Discord.C'est toujours un travail en cours mais certaines\ncommandes sont déjà implémentées.",
+        "work_bot_detail": "Bot déployé sur Heroku et sur notre serveur Discord.\n Développé avec la bibliothèque Discord.js\n pour interagir avec les utilisateurs sur Discord.C'est toujours un travail en cours mais certaines\n commandes sont déjà implémentées.",
         "work_binary_title": "Convertisseur binaire",
-        "work_binary_detail": "Première étape avec Vue.js pour comprendre comment cela fonctionne.\nUn simple convertisseur binaire, de binaire en nombre,\nde nombre en binaire ou de texte en binaire. Il s'agit d'une application single page (SPA), développée avec Vue CLI."
+        "work_binary_detail": "Première étape avec Vue.js pour comprendre comment cela fonctionne.\n Un simple convertisseur binaire, de binaire en nombre,\n de nombre en binaire ou de texte en binaire. Il s'agit d'une application single page (SPA), développée avec Vue CLI."
     }
 }
