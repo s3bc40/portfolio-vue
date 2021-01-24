@@ -1,8 +1,6 @@
 <template>
 <div class="loading-page">
-  <span class="spin-circle">
-    <i class="fas fa-circle-notch fa-spin fa-5x"></i>
-  </span>
+  <i class="spin-circle fas fa-circle-notch fa-spin fa-5x"></i>
 </div>
 </template>
 
@@ -12,7 +10,7 @@
             fixed 
             top-0 
             left-0 
-            block 
+            inline-block 
             w-full 
             h-full 
             bg-white
@@ -22,11 +20,11 @@
         @apply
             relative 
             block 
-            top-1/2 
-            w-0 h-0
+            top-1/2
             text-purple-600 
             opacity-75 
-            my-0 
-            mx-auto 
+            w-1/2
+            mx-auto
+            text-center
     }
 </style>
