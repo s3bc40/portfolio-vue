@@ -3,27 +3,25 @@
     <div v-if="isLoading">
       <the-loading-page></the-loading-page>
     </div>
-    <div id="app-main" v-else>
-      <div class="locale">
-        <select v-model="$i18n.locale">
-          <option>en</option>
-          <option>fr</option>
-        </select>
-      </div>
-      <the-nav-bar
-        :tabs="tabs"
-        :currentTab="currentTab"
-        @changeComponent="onChangeComponent"
-      ></the-nav-bar>
-      <div class="components-container">
-        <profile id="Profile"></profile>
-        <skills id="Skills"></skills>
-        <gears id="Gears"></gears>
-        <interests id="Interests"></interests>
-        <work id="Work"></work>
-      </div>
-      <the-footer></the-footer>
+    <div class="locale">
+      <select v-model="$i18n.locale">
+        <option>en</option>
+        <option>fr</option>
+      </select>
     </div>
+    <the-nav-bar
+      :tabs="tabs"
+      :currentTab="currentTab"
+      @changeComponent="onChangeComponent"
+    ></the-nav-bar>
+    <div class="components-container">
+      <profile id="Profile"></profile>
+      <skills id="Skills"></skills>
+      <gears id="Gears"></gears>
+      <interests id="Interests"></interests>
+      <work id="Work"></work>
+    </div>
+    <the-footer></the-footer>
   </div>
 </template>
 
@@ -82,16 +80,13 @@ export default {
       })
     }
   },
-  updated() {
-    // Opacity change when loading page done
-    gsap.from('#app-main', {
-      opacity: 0,
-      duration:1,
-    })
-  },
   methods: {
     loadingApp() {
+      // Hide Scroll bar to avoid animation acitvation
+      document.body.classList.add('overflow-hidden')
       setInterval(() => {
+        // Show Scroll bar
+        document.body.classList.remove('overflow-hidden')
         this.isLoading = false
       },5000)
     },
@@ -105,7 +100,7 @@ export default {
 </script>
 
 <style lang="postcss">
-  body {
+  #app {
     @apply
       bg-white
       text-gray-600

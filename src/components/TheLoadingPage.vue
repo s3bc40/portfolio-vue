@@ -16,16 +16,17 @@
             w-full 
             h-full 
             bg-white
+            z-50
     }
     .spin-circle {
         @apply
-        relative 
-        block 
-        top-1/2 
-        w-0 h-0
-        text-purple-600 
-        opacity-75 
-        my-0 
-        mx-auto 
+            relative 
+            block 
+            top-1/2 
+            w-0 h-0
+            text-purple-600 
+            opacity-75 
+            my-0 
+            mx-auto 
     }
 </style>

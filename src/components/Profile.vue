@@ -43,11 +43,13 @@ export default {
         }
     },
     mounted() {
-        // Compute all experience
+        //  Compute all experience
        this.computeExperience()
        this.computeLevel()
 
-        // Animate experience bar GreenSock
+        /*  Animate experience bar GreenSock
+            Note : delay of 6 for the loading page (need to fix that later)
+        */
         gsap.fromTo('.exp-animate',{
             scaleX: 0, 
             transformOrigin: "left",
@@ -56,7 +58,7 @@ export default {
         {
             scaleX: 1,
             duration: 2,
-            delay: 2
+            delay: 6,
         })
     },
     computed: {
