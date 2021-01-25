@@ -88,7 +88,7 @@ export default {
         // Show Scroll bar
         document.body.classList.remove('overflow-hidden')
         this.isLoading = false
-      },5000)
+      },10000)
     },
     onChangeComponent(tab) {
       this.currentTab = tab

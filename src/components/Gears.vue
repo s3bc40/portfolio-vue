@@ -78,7 +78,8 @@ export default {
             scrollTrigger: {
                 trigger: ".item-logo",
                 start: "top center",
-            }
+            },
+            paused:true
         })
         tl.from(".item-logo", {
             opacity:0, 

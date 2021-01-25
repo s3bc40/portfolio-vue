@@ -58,7 +58,7 @@ export default {
         {
             scaleX: 1,
             duration: 2,
-            delay: 6,
+            delay: 11,
         })
     },
     computed: {

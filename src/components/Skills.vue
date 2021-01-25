@@ -47,8 +47,9 @@ export default {
         const tl = gsap.timeline({ 
             scrollTrigger: {
                 trigger: ".skill-animate",
-                start: "top center"
+                start: "top center",
             },
+            paused:true
         })
         // Add ScrollIntoView plugin GSAP
         tl.from(".skill-animate", {
@@ -62,7 +63,7 @@ export default {
             x: -100, 
             duration: 1
         })
-    },
+    }
 }
 </script>
 
@@ -116,8 +117,8 @@ export default {
             flex
             space-x-1
             border
-            h-full
             w-full
+            h-auto
             bg-gray-200
     }
     .bar-fill {
