@@ -3,7 +3,7 @@
         <h1 class="interest-title">{{ $t('Interests') }}</h1>
         <div class="interest-cards">
             <div class="card">
-                <img class="card-img" :src="imgEnv" alt="Environment">
+                <img class="card-img" @load="$emit('loadedEnv')" :src="env_img" alt="Environment">
                 <button class="card-title" @click="env_drop = !env_drop">
                     <h2>{{ $t('environment') }}</h2>
                     <i class="far fa-caret-square-down" :class="env_drop ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -15,7 +15,7 @@
                 </transition>
             </div>
             <div class="card">
-                <img class="card-img" :src="imgHiking" alt="Hiking">
+                <img class="card-img" @load="$emit('loadedHiking')" :src="hiking_img" alt="Hiking">
                 <button class="card-title" @click="hiking_drop = !hiking_drop">
                     <h2>{{ $t('hiking') }}</h2>
                     <i class="far fa-caret-square-down" :class="hiking_drop ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -27,7 +27,7 @@
                 </transition>
             </div>
             <div class="card">
-                <img class="card-img" :src="imgGaming" alt="Gaming">
+                <img class="card-img" @load="$emit('loadedGaming')" :src="gaming_img" alt="Gaming">
                 <button class="card-title" @click="gaming_drop = !gaming_drop">
                     <h2>{{ $t('gaming') }}</h2>
                     <i class="far fa-caret-square-down" :class="gaming_drop ? 'card-dropped' : 'card-not-dropped'"></i>
@@ -48,24 +48,17 @@
 <script>
 export default {
     name: 'AboutInterest',
-    props: {
-        imgEnv: {
-            type: String
-        },
-        imgHiking: {
-            type: String
-        },
-        imgGaming: {
-            type: String
-        },
-    },
     data() {
         return {
+            env_img: 'https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif',
             env_drop: true,
+            hiking_img: 'https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif', 
             hiking_drop: true,
+            gaming_img: 'https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif', 
             gaming_drop: true,
         }
     },
+    emits: ['loadedEnv', 'loadedHiking', 'loadedGaming'],
 }
 </script>
 

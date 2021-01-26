@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <div v-if="isLoading">
-      <the-loading-page></the-loading-page>
-    </div>
+    <transition 
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >  
+      <div v-if="onLoading">
+        <the-loading-page></the-loading-page>
+      </div>
+    </transition>
     <div class="locale">
       <select v-model="$i18n.locale">
         <option>en</option>
@@ -17,22 +23,22 @@
     <div class="components-container">
       <profile 
         id="Profile" 
-        :imgProfile="imgs.imgProfile"
-        :loaded="!isLoading"
+        :loaded="!onLoading"
+        @loadedProfile="imgProfile = true"
       ></profile>
       <skills id="Skills"></skills>
       <gears id="Gears"></gears>
       <interests 
         id="Interests" 
-        :imgEnv="imgs.imgInterestsEnv"
-        :imgHiking="imgs.imgInterestsHiking"
-        :imgGaming="imgs.imgInterestsGaming"
+        @loadedEnv="imgEnv = true"
+        @loadedHiking="imgHiking = true"
+        @loadedGaming="imgGaming = true"
       ></interests>
       <work 
         id="Work"
-        :imgResume="imgs.imgWorkResume"
-        :imgBot="imgs.imgWorkBot"
-        :imgBinary="imgs.imgWorkBinary"
+        @loadedResume="imgResume = true"
+        @loadedBot="imgBot = true"
+        @loadedBinary="imgBinary = true"
       ></work>
     </div>
     <the-footer></the-footer>
@@ -69,7 +75,6 @@ export default {
   },
   data() {
     return {
-      isLoading: true,
       tabs: [
         'Profile', 
         'Skills', 
@@ -78,20 +83,18 @@ export default {
         'Work', 
       ],
       currentTab: 'Profile',
-      imgs: {
-        imgProfile: '/assets/img/profile_pic.png', 
-        imgInterestsEnv: 'https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif',
-        imgInterestsHiking: 'https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif', 
-        imgInterestsGaming: 'https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif', 
-        imgWorkResume: '/assets/img/resumeMD.png',
-        imgWorkBot: '/assets/img/teagueBot.png',
-        imgWorkBinary: '/assets/img/binary.png',
-      }
+      imgProfile: false,
+      imgEnv: false,
+      imgHiking: false,
+      imgGaming: false,
+      imgResume: false,
+      imgBot: false,
+      imgBinary: false,
     }
   },
   mounted() {
-    // Loading page of 5 secondes
-    this.loadingApp()
+    // Hide Scroll bar to avoid animation acitvation
+    document.body.classList.add('overflow-hidden')
     // GreenSock ScrollTrigger change active tab Navbar
     for (const tab of this.tabs) {
       ScrollTrigger.create({
@@ -103,21 +106,42 @@ export default {
       })
     }
   },
-  methods: {
-    loadingApp() {
-      // Hide Scroll bar to avoid animation acitvation
-      document.body.classList.add('overflow-hidden')
-      // Preload all imgs with the Image object
-      for (const key in this.imgs) {
-        const preloadImg = new Image()
-        preloadImg.onload = () => {return true}
-        preloadImg.src = this.imgs[key]
+  computed: {
+    onLoading() {
+      // Check if all images are loaded, else let loading page
+      if ((this.imgProfile && this.imgEnv && this.imgHiking && this.imgGaming && this.imgResume && this.imgBot && this.imgBinary)){
+        return this.showApplication()
       }
-      // When all img are loaded (add 2 sec of intervall)
-      setInterval(() => {
-        document.body.classList.remove('overflow-hidden')
-        this.isLoading = false
-      }, 2000)
+      return true
+    }
+  },
+  methods: {
+    showApplication () {
+      // When all images are loaded, show ScrollBar and show content
+      document.body.classList.remove('overflow-hidden')
+      return false
+    },
+    beforeEnter(el) {
+      // Animation entering loading page
+      gsap.set(el, {
+        opacity:0,
+      })
+    },
+    enter(el, done) {
+      // Animation entering loading page
+      gsap.to(el, {
+        opacity: 100,
+        ease: 'inout',
+        onComplete: done
+      })
+    },
+    leave(el, done) {
+      // Animation leaving loading page
+      gsap.to(el, {
+        opacity:0,
+        ease: 'inout',
+        onComplete: done
+      })
     },
     onChangeComponent(tab) {
       this.currentTab = tab

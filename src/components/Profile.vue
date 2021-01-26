@@ -1,6 +1,6 @@
 <template>
     <div class="content-profile">
-        <img class="profile-img" :src="imgProfile" alt="Seb Claro">
+        <img class="profile-img" @load="$emit('loadedProfile')" :src="imgProfile" alt="Seb Claro">
         <p class="profile-intro" v-html="$t('profile_intro')"></p>
         <div class="profile-experience">
             <h1 class="experience-title"><i class="fas fa-code"></i> {{ $t('profile_job') }}</h1>
@@ -9,7 +9,7 @@
             </span>
             <div class="experience-bar">
                 <div 
-                    class="bar-amount exp-animate">
+                    class="bar-amount exp-animate" :style="experienceWidth">
                 </div>
             </div>
             <span class="experience-text">{{ currentExperience }} {{ $t('profile_level_next') }}</span>
@@ -35,9 +35,6 @@ export default {
         ProfileTraits
     },
     props: {
-        imgProfile: {
-            type: String
-        },
         loaded: {
             type: Boolean
         }
@@ -48,35 +45,24 @@ export default {
             currentLevel: 0,
             experience_gained: 0,
             experience_all: 0,
+            imgProfile: '/assets/img/profile_pic.png'
         }
     },
     mounted() {
         //  Compute all experience
-       this.computeExperience()
-       this.computeLevel()
-
-        /*  Animate experience bar GreenSock
-            Note : delay of 6 for the loading page (need to fix that later)
-        */
+        this.computeExperience()
+        this.computeLevel()
     },
-    updated() {
-        if(this.loaded)
-        {
-            gsap.fromTo('.exp-animate',{
-                scaleX: 0, 
-                transformOrigin: "left",
-                width: this.computeExperienceWidth(),
-            },
-            {
-                scaleX: 1,
-                duration: 2,
-            })
-        }
-    },
+    emits: ['loadedProfile'],
     computed: {
         currentExperience() {
             /* Get your amount of experience (your age) in minutes  */
             return `${this.experience_gained} / ${this.experience_all}`
+        },
+        experienceWidth() {
+            /* Get your experience bar amount (age) */
+            const experience_percent = (100 * this.experience_gained) / this.experience_all
+            return { width: `${experience_percent.toFixed(1)}%` }
         },
     },
     methods: {
@@ -90,11 +76,6 @@ export default {
 
             this.experience_gained = moment().diff(last_birthdate, 'minutes')
             this.experience_all = next_birthdate.diff(last_birthdate, 'minutes')
-        },
-        computeExperienceWidth() {
-            /* Get your experience bar amount (age) */
-            const experience_percent = (100 * this.experience_gained) / this.experience_all
-            return `${experience_percent.toFixed(1)}%`
         },
         computeLevel() {
             /* Get your age as a Level of RPG */
