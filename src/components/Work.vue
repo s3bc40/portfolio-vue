@@ -8,7 +8,7 @@
         <div class="work-projects">
             <button class="project">
                 <a href="https://s3bc40.github.io/" target="_blank">
-                    <img src="/assets/img/resumeMD.png" class="project-image" alt="Resume Markdown">
+                    <img :src="imgResume" class="project-image" alt="Resume Markdown">
                     <div class="project-text">
                         <h2 class="text-title">{{ $t('work_resume_title') }}</h2>
                         <p class="text-content">{{ $t('work_resume_detail') }}</p>
@@ -18,7 +18,7 @@
             </button>
             <button class="project">
                 <a href="https://github.com/s3bc40/teague-bot" target="_blank">
-                    <img src="/assets/img/teagueBot.png" class="project-image" alt="Teague Bot Discord">
+                    <img :src="imgBot" class="project-image" alt="Teague Bot Discord">
                     <div class="project-text">
                         <h2 class="text-title">{{ $t('work_bot_title') }}</h2>
                         <p class="text-content">{{ $t('work_bot_detail') }}</p>
@@ -28,7 +28,7 @@
             </button>
             <button class="project">
                 <a href="https://s3bc40.github.io/binary-converter" target="_blank">
-                    <img src="/assets/img/binary.png" class="project-image" alt="Binary Converter">
+                    <img :src="imgBinary" class="project-image" alt="Binary Converter">
                     <div class="project-text">
                         <h2 class="text-title">{{ $t('work_binary_title') }}</h2>
                         <p class="text-content">{{ $t('work_binary_detail') }}</p>
@@ -46,6 +46,17 @@
 <script>
 export default {
     name: 'Work',
+    props: {
+        imgResume: {
+            type: String
+        },
+        imgBot: {
+            type: String
+        },
+        imgBinary: {
+            type: String
+        },
+    },
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="content-profile">
-        <img class="profile-img" src="/assets/img/profile_pic.png" alt="Seb Claro">
+        <img class="profile-img" :src="imgProfile" alt="Seb Claro">
         <p class="profile-intro" v-html="$t('profile_intro')"></p>
         <div class="profile-experience">
             <h1 class="experience-title"><i class="fas fa-code"></i> {{ $t('profile_job') }}</h1>
@@ -34,6 +34,14 @@ export default {
     components: {
         ProfileTraits
     },
+    props: {
+        imgProfile: {
+            type: String
+        },
+        loaded: {
+            type: Boolean
+        }
+    },
     data() {
         return {
             birthday: moment('1993-08-25'),
@@ -50,16 +58,20 @@ export default {
         /*  Animate experience bar GreenSock
             Note : delay of 6 for the loading page (need to fix that later)
         */
-        gsap.fromTo('.exp-animate',{
-            scaleX: 0, 
-            transformOrigin: "left",
-            width: this.computeExperienceWidth()
-        },
+    },
+    updated() {
+        if(this.loaded)
         {
-            scaleX: 1,
-            duration: 2,
-            delay: 11,
-        })
+            gsap.fromTo('.exp-animate',{
+                scaleX: 0, 
+                transformOrigin: "left",
+                width: this.computeExperienceWidth(),
+            },
+            {
+                scaleX: 1,
+                duration: 2,
+            })
+        }
     },
     computed: {
         currentExperience() {

@@ -3,37 +3,37 @@
         <h1 class="interest-title">{{ $t('Interests') }}</h1>
         <div class="interest-cards">
             <div class="card">
-                <img class="card-img" src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif" alt="Environment">
-                <button class="card-title" @click="drop_env = !drop_env">
+                <img class="card-img" :src="imgEnv" alt="Environment">
+                <button class="card-title" @click="env_drop = !env_drop">
                     <h2>{{ $t('environment') }}</h2>
-                    <i class="far fa-caret-square-down" :class="drop_env ? 'card-dropped' : 'card-not-dropped'"></i>
+                    <i class="far fa-caret-square-down" :class="env_drop ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
-                    <div class="card-content" v-show="drop_env">
+                    <div class="card-content" v-show="env_drop">
                         <p>{{ $t('environment_detail') }}</p>
                     </div>
                 </transition>
             </div>
             <div class="card">
-                <img class="card-img" src="https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif" alt="Hiking">
-                <button class="card-title" @click="drop_hiking = !drop_hiking">
+                <img class="card-img" :src="imgHiking" alt="Hiking">
+                <button class="card-title" @click="hiking_drop = !hiking_drop">
                     <h2>{{ $t('hiking') }}</h2>
-                    <i class="far fa-caret-square-down" :class="drop_hiking ? 'card-dropped' : 'card-not-dropped'"></i>
+                    <i class="far fa-caret-square-down" :class="hiking_drop ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
-                    <div class="card-content" v-show="drop_hiking">
+                    <div class="card-content" v-show="hiking_drop">
                         <p>{{ $t('hiking_detail') }}</p>
                     </div>
                 </transition>
             </div>
             <div class="card">
-                <img class="card-img" src="https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif" alt="Gaming">
-                <button class="card-title" @click="drop_gaming = !drop_gaming">
+                <img class="card-img" :src="imgGaming" alt="Gaming">
+                <button class="card-title" @click="gaming_drop = !gaming_drop">
                     <h2>{{ $t('gaming') }}</h2>
-                    <i class="far fa-caret-square-down" :class="drop_gaming ? 'card-dropped' : 'card-not-dropped'"></i>
+                    <i class="far fa-caret-square-down" :class="gaming_drop ? 'card-dropped' : 'card-not-dropped'"></i>
                 </button>
                 <transition name="fade">
-                    <div class="card-content" v-show="drop_gaming">
+                    <div class="card-content" v-show="gaming_drop">
                         <p>{{ $t('gaming_detail') }}</p>
                     </div>
                 </transition>
@@ -48,11 +48,22 @@
 <script>
 export default {
     name: 'AboutInterest',
+    props: {
+        imgEnv: {
+            type: String
+        },
+        imgHiking: {
+            type: String
+        },
+        imgGaming: {
+            type: String
+        },
+    },
     data() {
         return {
-            drop_env: true,
-            drop_hiking: true,
-            drop_gaming: true,
+            env_drop: true,
+            hiking_drop: true,
+            gaming_drop: true,
         }
     },
 }

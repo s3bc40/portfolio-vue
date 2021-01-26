@@ -15,11 +15,25 @@
       @changeComponent="onChangeComponent"
     ></the-nav-bar>
     <div class="components-container">
-      <profile id="Profile"></profile>
+      <profile 
+        id="Profile" 
+        :imgProfile="imgs.imgProfile"
+        :loaded="!isLoading"
+      ></profile>
       <skills id="Skills"></skills>
       <gears id="Gears"></gears>
-      <interests id="Interests"></interests>
-      <work id="Work"></work>
+      <interests 
+        id="Interests" 
+        :imgEnv="imgs.imgInterestsEnv"
+        :imgHiking="imgs.imgInterestsHiking"
+        :imgGaming="imgs.imgInterestsGaming"
+      ></interests>
+      <work 
+        id="Work"
+        :imgResume="imgs.imgWorkResume"
+        :imgBot="imgs.imgWorkBot"
+        :imgBinary="imgs.imgWorkBinary"
+      ></work>
     </div>
     <the-footer></the-footer>
   </div>
@@ -60,10 +74,19 @@ export default {
         'Profile', 
         'Skills', 
         'Gears',
-        'Interests', 
+        'Interests',
         'Work', 
       ],
       currentTab: 'Profile',
+      imgs: {
+        imgProfile: '/assets/img/profile_pic.png', 
+        imgInterestsEnv: 'https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif',
+        imgInterestsHiking: 'https://media.giphy.com/media/3oxRmGNqKwCzJ0AwPC/giphy.gif', 
+        imgInterestsGaming: 'https://media.giphy.com/media/l8TwxjgFRhDASPGuXc/giphy.gif', 
+        imgWorkResume: '/assets/img/resumeMD.png',
+        imgWorkBot: '/assets/img/teagueBot.png',
+        imgWorkBinary: '/assets/img/binary.png',
+      }
     }
   },
   mounted() {
@@ -84,11 +107,16 @@ export default {
     loadingApp() {
       // Hide Scroll bar to avoid animation acitvation
       document.body.classList.add('overflow-hidden')
+      // Preload all imgs with the Image object
+      for (const key in this.imgs) {
+        const preloadImg = new Image()
+        preloadImg.src = this.imgs[key]
+      }
+      // When all img are loaded (add 2 sec of intervall)
       setInterval(() => {
-        // Show Scroll bar
         document.body.classList.remove('overflow-hidden')
         this.isLoading = false
-      },10000)
+      }, 2000)
     },
     onChangeComponent(tab) {
       this.currentTab = tab
