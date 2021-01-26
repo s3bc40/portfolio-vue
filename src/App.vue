@@ -110,6 +110,7 @@ export default {
       // Preload all imgs with the Image object
       for (const key in this.imgs) {
         const preloadImg = new Image()
+        preloadImg.onload = () => {return true}
         preloadImg.src = this.imgs[key]
       }
       // When all img are loaded (add 2 sec of intervall)
