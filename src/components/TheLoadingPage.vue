@@ -1,6 +1,6 @@
 <template>
 <div class="loading-page">
-  <i class="spin-circle fas fa-circle-notch fa-spin fa-5x"></i>
+    <h1 class="loading-text">Loading...</h1>
 </div>
 </template>
 
@@ -16,13 +16,12 @@
             bg-white
             z-50
     }
-    .spin-circle {
+    .loading-text {
         @apply
             relative 
             block 
+            animate-bounce
             top-1/2
-            text-purple-600 
-            opacity-75 
             w-1/2
             mx-auto
             text-center
