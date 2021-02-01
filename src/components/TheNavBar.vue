@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
       <div class="navbar-title">
-        <a class="title-link" href="#">Claro Sebastien</a>
+        <a class="title-link" href="https://s3bc40portfolio.netlify.app/">Claro Sebastien</a>
       </div>
       <div class="navbar-components">
         <button 
